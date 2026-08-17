@@ -11,9 +11,30 @@
 # However, they didn't have the source code names, so I have done
 # additional work in matching up to the ZIL code.
 
-# Functions (high memory): "CodeArea" from reform
-# Strings (high memory): "StringArea" from reform
+# Functions (high memory): $53E2
+# Strings (high memory): $17698
 
 # Source files in arbitrary (alphabetical) order.
 # The second number is the order that code is generated in the game file.
 # (Which is, usually, the same order that the files are included.)
+SourceFile 1 z4.zil         1
+SourceFile 2 castle.zil     15
+SourceFile 3 clock.zil      4
+SourceFile 4 egg.zil        18
+SourceFile 5 gallery.zil    17
+SourceFile 6 gears.zil      20
+SourceFile 7 globals.zil    9
+SourceFile 8 gparser.zil    6
+SourceFile 9 knot.zil       13
+SourceFile 10 macros.zil    3
+SourceFile 11 magic.zil     12
+SourceFile 12 main.zil      5
+SourceFile 13 outside.zil   21
+SourceFile 14 purloined.zil 14
+SourceFile 15 record.zil    8
+SourceFile 16 sleep.zil     19
+SourceFile 17 stair.zil     11
+SourceFile 18 syntax.zil    2
+SourceFile 19 temple.zil    16
+SourceFile 20 terror.zil    10
+SourceFile 21 verbs.zil     7
