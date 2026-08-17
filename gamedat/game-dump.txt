@@ -10270,7 +10270,7 @@ Routine 17674, 0 locals ()
 17b1e: S063 "negligible"
 17b26: S064 "/"
 17b28: S065 "!"
-17b2a: S066 "\"
+17b2a: S066 "\\"
 17b2c: S067 "northwest"
 17b32: S068 "west"
 17b36: S069 "southwest"
