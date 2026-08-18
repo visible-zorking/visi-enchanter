@@ -145,26 +145,21 @@ export function AboutPage()
                 </p>
                 <h2>About this release</h2>
                 <p>
-                    <i>Enchanter</i> was originally released in XXXX.
-                    The version you see here dates from XXXX. (The serial number
-                    &#x201C;XXXXXX&#x201D; shows the compile date.)
+                    <i>Enchanter</i> was originally released in 1983.
+                    The version you see here dates from 1986. (The serial number
+                    &#x201C;860820&#x201D; shows the compile date.)
                     As with Zork, it was built using a proprietary system
                     called{' '}
                     <ExtWebLink url={ 'https://blog.zarfhome.com/2019/04/what-is-zil-anyway' } text={ 'ZIL' } />.
                     (For &#x201C;Zork Implementation Language&#x201D;.)
                 </p>
                 <p>
-                    This is the first known version, released in 1982.
-                    (The serial number
-                    &#x201C;820901&#x201D; shows the compile date.)
-                    A slightly later release (&#x201C;821021&#x201D;)
-                    was included in the &#x201C;
+                    This 1986 release is
+                    the one most commonly seen today,
+                    because it was included in the &#x201C;
                     <ExtWebLink url={ 'https://archive.org/details/lost-treasures-of-infocom' } text={ 'Lost Treasures of Infocom' } />
                     &#x201D; collection and later collections.
-                    However, we do not have the source code for that
-                    release, so I selected the original for this exhibit.
-                    Archived evidence indicates that Infocom continued
-                    updating the source through XXXX.
+                    I have therefore selected it for this exhibit.
                 </p>
                 <h2>Sources and acknowledgements</h2>
                 <p>
