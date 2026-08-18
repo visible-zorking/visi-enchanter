@@ -7,6 +7,25 @@ export function sourceloc_start() : string
 
 // Presentation order. Filenames must match game-info!
 export const sourcefile_presentation_list: string[] = [
-    'game.zil',
-    //...more files...
+    'z4.zil',
+    'outside.zil',
+    'castle.zil',
+    'gallery.zil',
+    'temple.zil',
+    'terror.zil',
+    'egg.zil',
+    'knot.zil',
+    'purloined.zil',
+    'gears.zil',
+    'stair.zil',
+    'sleep.zil',
+    'magic.zil',
+    'globals.zil',
+    'main.zil',
+    'gparser.zil',
+    'syntax.zil',
+    'verbs.zil',
+    'record.zil',
+    'macros.zil',
+    'clock.zil',
 ];
