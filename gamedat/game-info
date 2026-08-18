@@ -40,6 +40,10 @@ SourceFile 20 terror.zil    10
 SourceFile 21 verbs.zil     7
 
 Object 39 ROOMS
-
+Object 42 WEST-FORK
+Object 55 PLAYER
+Object 58 LOCAL-GLOBALS
+Object 76 GLOBAL-OBJECTS
+Object 252 PSEUDO-OBJECT
 
 Global 37 C-TABLE  TABLE
