@@ -22,7 +22,7 @@ export function AboutPage()
         map.set(tup.onum, tup);
     }
     
-    let advroom: number = gamedat_ids.ADVENTURER;
+    let advroom: number = gamedat_ids.PLAYER;
     while (true) {
         let tup = map.get(advroom);
         if (!tup || tup.parent == 0 || tup.parent == gamedat_ids.ROOMS)
@@ -30,14 +30,14 @@ export function AboutPage()
         advroom = tup.parent;
     }
 
-    if (advroom != gamedat_ids.ADVENTURER) {
+    if (advroom != gamedat_ids.PLAYER) {
         let obj = gamedat_object_ids.get(advroom);
         if (obj) {
             curroom = obj.name;
         }
 
         let child = map.get(advroom)!.child;
-        if (child && child == gamedat_ids.ADVENTURER) {
+        if (child && child == gamedat_ids.PLAYER) {
             child = map.get(child)!.sibling;
         }
 
@@ -73,12 +73,12 @@ export function AboutPage()
             <div className="AboutPage">
                 <h2>What&#x2019;s going on?</h2>
                 <p>
-                    You are playing <i>TITLE</i>, the classic Infocom text adventure.
+                    You are playing <i>Enchanter</i>, the classic Infocom text adventure.
                     And you are watching the Z-machine execute the game,
                     live, as you play.
                 </p>
                 <p>
-                    (In case it&#x2019;s not obvious: <em>SPOILERS</em> for <i>TITLE</i>.
+                    (In case it&#x2019;s not obvious: <em>SPOILERS</em> for <i>Enchanter</i>.
                     The source code gives away every secret and solution in the game.
                     The whole point of this project is to demonstrate how
                     Infocom games work!)
@@ -96,7 +96,7 @@ export function AboutPage()
                     {' '}<a className="Internal" href="#" onClick={ (ev)=>evhan_click_tab(ev, 'objtree') }>World</a>{' '}
                     tab for a start.
                     This shows every object and room in the game.
-                    You, the Adventurer, are in the topmost room:{' '}
+                    You, the Player, are in the topmost room:{' '}
                     <code>{ curroom }</code>.
                     Listed with you are the objects you
                     can see.{' '}
@@ -104,7 +104,7 @@ export function AboutPage()
                        <>(Try typing &#x201C;<code>EXAMINE { firstobj }</code>&#x201D;!) </>
                        : null) }
                     Objects you pick up will be listed directly under
-                    the <code>ADVENTURER</code>; they will move with
+                    the <code>PLAYER</code>; they will move with
                     you as part of your inventory.
                 </p>
                 <p>
@@ -124,7 +124,7 @@ export function AboutPage()
                 <p>
                     Click on any function, object, or variable to see its
                     definition in the source code. Click on an object&#x2019;s
-                    {' '}<ObjPageLink onum={ gamedat_ids.ADVENTURER } /> button
+                    {' '}<ObjPageLink onum={ gamedat_ids.PLAYER } /> button
                     to see its current state and place in the world.
                     (This will initially match the source code, but
                     may change as you interact with the game.)
@@ -132,20 +132,20 @@ export function AboutPage()
                 <p>
                     <Commentary topic={ 'ABOUT' } />
                     Click on the green buttons to see commentary about{' '}
-                    <i>TITLE</i>&#x2019;s implementation. Notes, trivia, whatever came
+                    <i>Enchanter</i>&#x2019;s implementation. Notes, trivia, whatever came
                     into my head as I was building the Visible Zorker!
                 </p>
                 <h2>The FEELIES</h2>
                 <p>
                     The <a className="Internal" href="#" onClick={ (ev)=>evhan_click_tab(ev, 'feelies') }>Feelies</a>{' '}
-                    tab is particularly important. <i>TITLE</i> originally
+                    tab is particularly important. <i>Enchanter</i> originally
                     came with ###.... The Feelies tab
                     contains links to these documents, as well as other
                     commands you will need to play.
                 </p>
                 <h2>About this release</h2>
                 <p>
-                    <i>TITLE</i> was originally released in XXXX.
+                    <i>Enchanter</i> was originally released in XXXX.
                     The version you see here dates from XXXX. (The serial number
                     &#x201C;XXXXXX&#x201D; shows the compile date.)
                     As with Zork, it was built using a proprietary system
@@ -169,7 +169,7 @@ export function AboutPage()
                 <h2>Sources and acknowledgements</h2>
                 <p>
                     The game&#x2019;s source code was first{' '}
-                    <ExtWebLink url={ 'https://github.com/historicalsource/TITLE' } text={ 'publicly released' } />
+                    <ExtWebLink url={ 'https://github.com/historicalsource/enchanter' } text={ 'publicly released' } />
                     {' '}by Jason Scott in April 2019.
                     I then combed through all known versions and posted my{' '}
                     <ExtWebLink url={ 'https://eblong.com/infocom/' } text={ 'Obsessively Complete Infocom Catalog' } />,
@@ -203,10 +203,11 @@ export function AboutPage()
                     <ExtWebLink url={ 'https://infodoc.plover.net/manuals/' } text={ 'InfoDoc Project' } />
                     {' '}and my own collection.
                     See also the{' '}
-                    <ExtWebLink url={ 'https://archive.org/details/XXXX' } text={ 'Internet Archive' } />.
+                    <ExtWebLink url={ 'https://archive.org/details/Infocom_Enchanter_Apple' } text={ 'Internet Archive' } />.
                 </p>
                 <p>
-                    <i>TITLE</i> itself was originally written by XXXX.
+                    <i>Enchanter</i> itself was originally written by
+                    Dave Lebling and Marc Blank.
                     It is copyright 1983 (etc) by Infocom,
                     then Activision, then renamed to Mediagenic,
                     then Bobby Kotick bought it and renamed it Activision,
@@ -214,14 +215,14 @@ export function AboutPage()
                     then Microsoft consumed the lot.
                 </p>
                 <p>
-                    Thus, the <i>TITLE</i> source code is copyright 2025 by
+                    Thus, the <i>Enchanter</i> source code is copyright 2025 by
                     Microsoft. Microsoft has not released this game as
                     open source, but I&#x2019;m going at it regardless.
                 </p>
                 <p>
                     Aside from the above, the Visible Zorker is copyright
                     2025-2026 by Andrew Plotkin. MIT license;{' '}
-                    <ExtWebLink url={ 'https://github.com/visible-zorking/visi-starcross' } text={ 'Github repo' } />.
+                    <ExtWebLink url={ 'https://github.com/visible-zorking/visi-enchanter' } text={ 'Github repo' } />.
                 </p>
                 <h2>Patreon supporters</h2>
                 <ul className="PatreonList">
