@@ -38,3 +38,8 @@ SourceFile 18 syntax.zil    2
 SourceFile 19 temple.zil    16
 SourceFile 20 terror.zil    10
 SourceFile 21 verbs.zil     7
+
+Object 39 ROOMS
+
+
+Global 37 C-TABLE  TABLE
