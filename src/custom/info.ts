@@ -2,7 +2,7 @@
 /* Return the initial sourceloc to display. */
 export function sourceloc_start() : string
 {
-    return 'J:78:1:101:0';  // 'gverbs.zil', lines 78-100
+    return 'U:296:1:311:0';  // 'verbs.zil', lines 296-310
 }
 
 // Presentation order. Filenames must match game-info!
