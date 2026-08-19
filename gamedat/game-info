@@ -326,23 +326,23 @@ Object 255 GLOBAL-KRILL
 Attribute 9 VOWELBIT
 # Attribute X WEAPONBIT
 
-# Property X ADVFCN
-# Property X CONTFCN
-# Property X COUNT
-# Property X DESCFCN
-# Property X MUNGDESC
 
-Property 5 TMAZE
+Property 3 MUNGDESC  STR
+Property 4 COUNT  INT
+Property 5 TMAZE  TMAZE
 Property 6 POINT  INT
 Property 7 TEXT  STR
 Property 8 ADJECTIVE ADJS
 Property 9 ACTION  RTN
 Property 10 CAPACITY  INT
 Property 11 SIZE  INT
+Property 12 CONTFCN  RTN
 Property 13 PSEUDO  WORDRTNS
 Property 14 LDESC  STR
 Property 15 FDESC  STR
+Property 16 ADVFCN  RTN
 Property 17 GLOBAL  OBJS
+Property 18 DESCFCN  RTN
 Property 19 SYNONYM  WORDS
 Property 20 OUT  DIR
 Property 21 IN  DIR
@@ -356,6 +356,7 @@ Property 28 SE  DIR
 Property 29 EAST  DIR
 Property 30 NE  DIR
 Property 31 NORTH  DIR
+
 
 Global 0 HERE  OBJ
 Global 1 SCORE
