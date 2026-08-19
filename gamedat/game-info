@@ -92,7 +92,7 @@ Object 50 KRILL
 Object 51 BENCHES
 Object 52 POINT-R
 Object 53 NEWT-SPELL
-# Object 54: "Cell" NORTH-CELL TOWER-N TOWER-S
+# Object 54: "Cell" TOWER-N TOWER-S
 Object 55 PLAYER
 # Object 56: "Translucent Room" T-A T-B T-C T-D T-E T-F T-G T-H T-I
 Object 57 DISTANT-CASTLE
@@ -125,7 +125,7 @@ Object 83 BLACK-PASSAGE
 Object 84 TALK-TO-ANIMALS-SPELL
 # Object 85: "oven" OVEN SHACK-OVEN
 Object 86 POINT-M
-# Object 87: "Cell" NORTH-CELL TOWER-N TOWER-S
+# Object 87: "Cell" TOWER-N TOWER-S
 Object 88 PEDESTAL
 Object 89 SHADY-BROOK
 Object 90 MACHINERY
@@ -137,7 +137,7 @@ Object 95 FOREST-1
 Object 96 SHACK-EAST
 # Object 97: "adventurer" GLOBAL-ADVENTURER ADVENTURER-LG ADVENTURER
 Object 98 SEA-STUFF
-# Object 99: "Cell" NORTH-CELL TOWER-N TOWER-S
+Object 99 NORTH-CELL
 Object 100 STATUE
 Object 101 WEST-CASTLE
 Object 102 TRAIL-HEAD
@@ -278,7 +278,7 @@ Object 235 NEWT-SCROLL
 Object 237 POINT-B
 Object 238 OPEN-SPELL
 # Object 239: "sign" FLOATING-SIGN PATH-SIGN LONG-ROAD-SIGN
-# Object 240: "Translucent Room" T-A T-B T-C T-D T-E T-F T-G T-H T-I
+Object 240 T-A
 Object 241 REPAIR-SPELL
 # Object 242: "adventurer" GLOBAL-ADVENTURER ADVENTURER-LG ADVENTURER
 Object 243 INSIDE-GATE
@@ -323,27 +323,27 @@ Object 255 GLOBAL-KRILL
 # Attribute X VICBIT
 # Attribute X VICTIM
 # Attribute X VILLAIN
-# Attribute X VOWELBIT
+Attribute 9 VOWELBIT
 # Attribute X WEAPONBIT
 
-# Property X ACTION
-# Property X ADJECTIVE
 # Property X ADVFCN
-# Property X CAPACITY
 # Property X CONTFCN
 # Property X COUNT
 # Property X DESCFCN
-# Property X FDESC
-# Property X GLOBAL
-# Property X LDESC
 # Property X MUNGDESC
-# Property X POINT
-# Property X PSEUDO
-# Property X SIZE
-# Property X SYNONYM
-# Property X TEXT
-# Property X TMAZE
 
+Property 5 TMAZE
+Property 6 POINT  INT
+Property 7 TEXT  STR
+Property 8 ADJECTIVE ADJS
+Property 9 ACTION  RTN
+Property 10 CAPACITY  INT
+Property 11 SIZE  INT
+Property 13 PSEUDO  WORDRTNS
+Property 14 LDESC  STR
+Property 15 FDESC  STR
+Property 17 GLOBAL  OBJS
+Property 19 SYNONYM  WORDS
 Property 20 OUT  DIR
 Property 21 IN  DIR
 Property 22 DOWN  DIR
