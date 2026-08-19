@@ -54,7 +54,7 @@ Object 12 COURTYARD
 Object 13 WINDOW
 Object 14 PENCIL
 Object 15 IRON-GATE-CHAINS
-# Object 16: "rainbow turtle" TURTLE GLOBAL-TURTLE
+Object 16 TURTLE
 Object 17 VOICES
 Object 18 HEATHER
 Object 19 JUG
@@ -86,9 +86,9 @@ Object 43 EAST-HALL
 Object 45 LONG-ROAD
 Object 46 TERROR
 # Object 47: "Winding Stair" ENDLESS-STAIR REAL-STAIR
-# Object 48: "rainbow turtle" TURTLE GLOBAL-TURTLE
+Object 48 GLOBAL-TURTLE
 Object 49 VISTA
-# Object 50: "warlock Krill" KRILL GLOBAL-KRILL
+Object 50 KRILL
 Object 51 BENCHES
 Object 52 POINT-R
 Object 53 NEWT-SPELL
@@ -293,7 +293,7 @@ Object 251 TOWER-S-DOOR
 Object 252 PSEUDO-OBJECT
 Object 253 DIM-DESCENT
 Object 254 LITTER
-# Object 255: "warlock Krill" KRILL GLOBAL-KRILL
+Object 255 GLOBAL-KRILL
 
 
 Global 0 HERE  OBJ
