@@ -333,28 +333,29 @@ Object 255 GLOBAL-KRILL
 # Property X CONTFCN
 # Property X COUNT
 # Property X DESCFCN
-# Property X DOWN
-# Property X EAST
 # Property X FDESC
 # Property X GLOBAL
-# Property X IN
 # Property X LDESC
 # Property X MUNGDESC
-# Property X NE
-# Property X NORTH
-# Property X NW
-# Property X OUT
 # Property X POINT
 # Property X PSEUDO
-# Property X SE
 # Property X SIZE
-# Property X SOUTH
-# Property X SW
 # Property X SYNONYM
 # Property X TEXT
 # Property X TMAZE
-# Property X UP
-# Property X WEST
+
+Property 20 OUT  DIR
+Property 21 IN  DIR
+Property 22 DOWN  DIR
+Property 23 UP  DIR
+Property 24 NW  DIR
+Property 25 WEST  DIR
+Property 26 SW  DIR
+Property 27 SOUTH  DIR
+Property 28 SE  DIR
+Property 29 EAST  DIR
+Property 30 NE  DIR
+Property 31 NORTH  DIR
 
 Global 0 HERE  OBJ
 Global 1 SCORE
