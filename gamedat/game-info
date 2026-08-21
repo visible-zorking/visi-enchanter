@@ -295,24 +295,21 @@ Object 253 DIM-DESCENT
 Object 254 LITTER
 Object 255 GLOBAL-KRILL
 
-# Attribute X BURNBIT
-# Attribute X DOORBIT
-# Attribute X LOCKEDBIT
-# Attribute X POINTBIT
-# Attribute X SCROLLBIT
-# Attribute X SEARCHBIT
-# Attribute X SURFACEBIT
-# Attribute X TRYTAKEBIT
-# Attribute X VEHBIT
-# Attribute X VICTIM
 
+Attribute 1 LOCKEDBIT
 Attribute 2 TREASURE
+Attribute 3 SCROLLBIT
 Attribute 4 SPELLBIT
+Attribute 5 VICTIM
+Attribute 6 POINTBIT
 Attribute 7 NDESCBIT
 Attribute 8 ONBIT
 Attribute 9 VOWELBIT
 Attribute 10 TRANSBIT
+Attribute 11 SEARCHBIT
 Attribute 12 OPENBIT
+Attribute 13 TRYTAKEBIT
+Attribute 14 SURFACEBIT
 Attribute 15 TOUCHBIT
 Attribute 16 INVISIBLE
 Attribute 17 RMUNGBIT
@@ -322,8 +319,12 @@ Attribute 20 VICBIT
 Attribute 21 CONTBIT
 Attribute 22 LIGHTBIT
 Attribute 23 TOOLBIT
+Attribute 24 DOORBIT
 Attribute 25 RLANDBIT
 Attribute 26 CLIMBBIT
+# Attribute 27?
+Attribute 28 BURNBIT
+Attribute 29 VEHBIT
 Attribute 30 WEAPONBIT
 Attribute 31 VILLAIN
 
