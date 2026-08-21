@@ -322,7 +322,7 @@ Attribute 23 TOOLBIT
 Attribute 24 DOORBIT
 Attribute 25 RLANDBIT
 Attribute 26 CLIMBBIT
-# Attribute 27?
+Attribute 27 FLAMEBIT
 Attribute 28 BURNBIT
 Attribute 29 VEHBIT
 Attribute 30 WEAPONBIT
