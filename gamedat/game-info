@@ -616,6 +616,20 @@ RoutineType - WT? WORD - -
 # (These are used for the "list rooms in order of closeness to you"
 # display tab.)
 
+MapExtraConn - LONG-ROAD EAST WEST-FORK
+
+MapExtraConn - ENGINE-ROOM SE CLOSET
+MapExtraConn - CLOSET NW ENGINE-ROOM
+
+MapExtraConn - LANDING EAST ENDLESS-STAIR
+MapExtraConn - ENDLESS-STAIR WEST LANDING
+MapExtraConn - ENDLESS-STAIR IN REAL-STAIR
+MapExtraConn - REAL-STAIR WEST LANDING
+MapExtraConn - REAL-STAIR DOWN PIT
+MapExtraConn - PIT UP REAL-STAIR
+MapExtraConn - REAL-STAIR EAST WARLOCK-TOWER
+MapExtraConn - WARLOCK-TOWER WEST REAL-STAIR
+
 MapExtraConn - T-A UP DUNGEON
 MapExtraConn - T-A SOUTH T-B
 MapExtraConn - T-A SE T-C
