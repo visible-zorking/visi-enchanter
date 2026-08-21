@@ -72,7 +72,7 @@ Object 30 MAGIC-ROPE
 Object 31 LIGHTS
 Object 32 FOREST-2
 Object 33 LAWN
-# Object 34: "Translucent Room" T-A T-B T-C T-D T-E T-F T-G T-H T-I
+Object 34 T-H
 Object 35 ALTAR
 Object 36 HASTE-SCROLL
 # Object 37: "sign" FLOATING-SIGN PATH-SIGN LONG-ROAD-SIGN
@@ -94,7 +94,7 @@ Object 52 POINT-R
 Object 53 NEWT-SPELL
 # Object 54: "Cell" TOWER-N TOWER-S
 Object 55 PLAYER
-# Object 56: "Translucent Room" T-A T-B T-C T-D T-E T-F T-G T-H T-I
+Object 56 T-D
 Object 57 DISTANT-CASTLE
 Object 58 LOCAL-GLOBALS
 Object 59 LIGHT-SPELL
@@ -142,7 +142,7 @@ Object 100 STATUE
 Object 101 WEST-CASTLE
 Object 102 TRAIL-HEAD
 Object 103 KNOT-ROOM
-# Object 104: "Translucent Room" T-A T-B T-C T-D T-E T-F T-G T-H T-I
+Object 104 T-G
 Object 105 LANDING
 Object 106 PORTRAITS
 Object 107 SILVER-SPOON
@@ -157,7 +157,7 @@ Object 115 BEDPOST-BUTTON
 # Object 116: "Courtyard" COURTYARD-1 COURTYARD-2 COURTYARD-3 COURTYARD-4 COURTYARD-5 COURTYARD-6 COURTYARD-7
 Object 117 CHEAT-DEATH-SCROLL
 Object 118 LILY-PAD
-# Object 119: "Translucent Room" T-A T-B T-C T-D T-E T-F T-G T-H T-I
+Object 119 T-C
 Object 120 GLOBAL-CRONE
 Object 121 MAPS
 Object 122 TEMPLE
@@ -201,7 +201,7 @@ Object 159 TEMPLE-OBJ
 # Object 160: "Winding Stair" ENDLESS-STAIR REAL-STAIR
 Object 161 PURLOINED-ROOM
 Object 162 COURTYARD-7
-# Object 163: "Translucent Room" T-A T-B T-C T-D T-E T-F T-G T-H T-I
+Object 163 T-F
 Object 164 BEDROOM
 Object 165 SHACK-OBJ
 # Object 166: "glimpse" GLIMPSE-1 GLIMPSE-2
@@ -212,7 +212,7 @@ Object 170 LIGHTED-PORTRAIT
 Object 171 CLOSET
 Object 172 MIRROR-HALL-1
 Object 173 WESTERN-ROAD
-# Object 174: "Translucent Room" T-A T-B T-C T-D T-E T-F T-G T-H T-I
+Object 174 T-B
 Object 175 LANTERN
 Object 176 STRONG-BOX
 Object 177 IMPLEMENTS
@@ -254,7 +254,7 @@ Object 212 DUSTY-ROAD
 Object 213 SECRET-PASSAGE
 Object 214 BRAMBLES
 Object 215 CHARM-SPELL
-# Object 216: "Translucent Room" T-A T-B T-C T-D T-E T-F T-G T-H T-I
+Object 216 T-I
 # Object 217: "Courtyard" COURTYARD-1 COURTYARD-2 COURTYARD-3 COURTYARD-4 COURTYARD-5 COURTYARD-6 COURTYARD-7
 Object 218 BEACH-OBJ
 Object 219 PEBBLED-PATH
@@ -269,7 +269,7 @@ Object 227 SHACK-ROOM
 Object 228 SHARDS
 Object 229 MIRROR-HALL-4
 Object 230 DOOR-ILLUSION
-# Object 231: "Translucent Room" T-A T-B T-C T-D T-E T-F T-G T-H T-I
+Object 231 T-E
 Object 232 IRON-GATE
 Object 233 BANISH-SCROLL
 Object 234 DAMAGED-SCROLL
