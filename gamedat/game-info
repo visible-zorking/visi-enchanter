@@ -170,7 +170,7 @@ Object 128 MONSTERS-3
 Object 129 GALLERY
 Object 130 MEADOW-OBJ
 Object 131 MONSTERS-2
-# Object 132: "monster" SHAPE MONSTERS-1
+Object 132 MONSTERS-1
 Object 133 BED
 Object 134 CHARM-SCROLL
 Object 135 GLOBAL-ROOM
@@ -286,7 +286,7 @@ Object 244 SHACK
 Object 245 SUMMON-SCROLL
 Object 246 SOUTH-GATE
 Object 247 JUNCTION
-# Object 248: "monster" SHAPE MONSTERS-1
+Object 248 SHAPE
 Object 249 VILLAGE-EAST
 Object 250 ENTHARION
 Object 251 TOWER-S-DOOR
@@ -298,7 +298,6 @@ Object 255 GLOBAL-KRILL
 # Attribute X BURNBIT
 # Attribute X CONTBIT
 # Attribute X DOORBIT
-# Attribute X INVISIBLE
 # Attribute X LIGHTBIT
 # Attribute X LOCKEDBIT
 # Attribute X ONBIT
@@ -306,7 +305,6 @@ Object 255 GLOBAL-KRILL
 # Attribute X POINTBIT
 # Attribute X SCROLLBIT
 # Attribute X SEARCHBIT
-# Attribute X SPELLBIT
 # Attribute X SURFACEBIT
 # Attribute X TAKEBIT
 # Attribute X TOOLBIT
@@ -315,14 +313,16 @@ Object 255 GLOBAL-KRILL
 # Attribute X TREASURE
 # Attribute X TRYTAKEBIT
 # Attribute X VEHBIT
-# Attribute X VICBIT
 # Attribute X VICTIM
 # Attribute X WEAPONBIT
 
+Attribute 4 SPELLBIT
 Attribute 7 NDESCBIT
 Attribute 9 VOWELBIT
+Attribute 16 INVISIBLE
 Attribute 17 RMUNGBIT
 Attribute 18 READBIT
+Attribute 20 VICBIT
 Attribute 25 RLANDBIT
 Attribute 26 CLIMBBIT
 Attribute 31 VILLAIN
