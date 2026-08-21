@@ -611,3 +611,50 @@ RoutineType - SPELL-TIMES OBJ
 RoutineType - SYNTAX-FOUND GLINE
 RoutineType - V-CLIMB-UP PROP
 RoutineType - WT? WORD - -
+
+# Map connections that don't come directly from room properties.
+# (These are used for the "list rooms in order of closeness to you"
+# display tab.)
+
+MapExtraConn - T-A UP DUNGEON
+MapExtraConn - T-A SOUTH T-B
+MapExtraConn - T-A SE T-C
+MapExtraConn - T-A EAST T-E
+MapExtraConn - T-B SE T-D
+MapExtraConn - T-B EAST T-F
+MapExtraConn - T-B NE T-C
+MapExtraConn - T-B NORTH T-A
+MapExtraConn - T-C NW T-A
+MapExtraConn - T-C SW T-B
+MapExtraConn - T-C SOUTH T-D
+MapExtraConn - T-C SE T-F
+MapExtraConn - T-C EAST T-G
+MapExtraConn - T-C NE T-E
+MapExtraConn - T-D NW T-B
+MapExtraConn - T-D EAST T-I
+MapExtraConn - T-D NE T-F
+MapExtraConn - T-D NORTH T-C
+MapExtraConn - T-E WEST T-A
+MapExtraConn - T-E SW T-C
+MapExtraConn - T-E SOUTH T-F
+MapExtraConn - T-E SE T-G
+MapExtraConn - T-F NW T-C
+MapExtraConn - T-F WEST T-B
+MapExtraConn - T-F SW T-D
+MapExtraConn - T-F SE T-I
+MapExtraConn - T-F EAST T-H
+MapExtraConn - T-F NE T-G
+MapExtraConn - T-F NORTH T-E
+MapExtraConn - T-G NW T-E
+MapExtraConn - T-G WEST T-C
+MapExtraConn - T-G SW T-F
+MapExtraConn - T-G SOUTH T-I
+MapExtraConn - T-G SE T-H
+MapExtraConn - T-H NW T-G
+MapExtraConn - T-H W T-F
+MapExtraConn - T-H SW T-I
+MapExtraConn - T-I NW T-F
+MapExtraConn - T-I WEST T-D
+MapExtraConn - T-I NE T-H
+MapExtraConn - T-I NORTH T-G
+
