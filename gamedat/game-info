@@ -366,11 +366,11 @@ Global 2 MOVES
 Global 3 GALLERY-POINT
 Global 4 DAWN
 Global 5 P-END-ON-PREP
-### Global 6 ###
+Global 6 SUPER-BRIEF
 Global 7 TWAIT
 Global 8 LOSSAGE
 Global 9 NO-LONGER-PROTECTED  STR
-### Global 10 ###
+Global 10 VERBOSE
 Global 11 P-BUTS  TABLE
 Global 12 TWALK-PATHS  DATA
 Global 13 ADV-NEW-LOC  OBJ
