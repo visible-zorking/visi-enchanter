@@ -135,13 +135,13 @@ export function AboutPage()
                     <i>Enchanter</i>&#x2019;s implementation. Notes, trivia, whatever came
                     into my head as I was building the Visible Zorker!
                 </p>
-                <h2>The FEELIES</h2>
+                <h2>How to cast spells</h2>
                 <p>
                     The <a className="Internal" href="#" onClick={ (ev)=>evhan_click_tab(ev, 'feelies') }>Feelies</a>{' '}
                     tab is particularly important. <i>Enchanter</i> originally
-                    came with ###.... The Feelies tab
-                    contains links to these documents, as well as other
-                    commands you will need to play.
+                    came with a document describing your initial spells
+                    and an explanation of how to use magic in your quest.
+                    The Feelies tab contains links to these instructions.
                 </p>
                 <h2>About this release</h2>
                 <p>
