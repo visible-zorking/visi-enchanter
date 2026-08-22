@@ -594,6 +594,7 @@ Global 230 VERBS  table created from SYNTAX
 
 # Argument type info for routines that are hard to guess.
 
+RoutineType - ADVENTURER-DECIDE OBJ
 RoutineType - BLT OBJ OBJ
 RoutineType - CLAUSE - - WORD
 RoutineType - DESCRIBE-NEW-EXIT OBJ OBJ
