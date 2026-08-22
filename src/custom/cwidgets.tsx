@@ -73,6 +73,11 @@ export function global_value_display(tag: string, value: number, glo: GlobalData
         return (
             <VarShowObject value={ value } />
         )
+
+    case 'TIMEOFDAY':
+        return (
+            <VarShowTimeOfDay value={ value } />
+        )
         
     }
     
@@ -115,5 +120,30 @@ export function stack_call_arg_display(tag: string, value: number) : JSX.Element
     }
 
     return null;
+}
+
+export function VarShowTimeOfDay({ value }: { value:number })
+{
+    let hour = 6 + Math.floor(value / 5);
+    let ampm = 'am';
+
+    if (hour > 24) {
+        hour -= 24;
+    }
+    else if (hour == 24) {
+        hour = 12;
+        ampm = 'midnight';
+    }
+    else if (hour > 12) {
+        hour -= 12;
+        ampm = 'pm';
+    }
+    else if (hour == 12) {
+        ampm = 'noon';
+    }
+    
+    return (
+        <span>{ value } <i>(~{ hour } { ampm })</i></span>
+    );
 }
 
