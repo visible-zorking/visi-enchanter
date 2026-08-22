@@ -597,6 +597,10 @@ Global 230 VERBS  table created from SYNTAX
 RoutineType - BLT OBJ OBJ
 RoutineType - CLAUSE - - WORD
 RoutineType - DESCRIBE-NEW-EXIT OBJ OBJ
+RoutineType - DIR-FROM OBJ OBJ
+RoutineType - DIR-PRINT PROP
+RoutineType - DOOR-FROM? OBJ OBJ
+RoutineType - EGG-KNOB-STATE OBJ
 RoutineType - FORGET-SPELL OBJ
 RoutineType - GLOBAL-IN? OBJ OBJ
 RoutineType - GWIM - - PREP
