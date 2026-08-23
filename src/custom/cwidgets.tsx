@@ -7,6 +7,7 @@ import { ReactCtx, StackCallCtx } from '../visi/context';
 import { ArgShowObject, ArgShowProperty } from '../visi/actshowers';
 import { VarShowObject, VarShowProperty } from '../visi/globshow';
 import { gamedat_ids, gamedat_distances, gamedat_object_treesort } from '../visi/gamedat';
+import { tmaze_props } from './modgame';
 
 export function contains_label(obj: ObjectData) : string
 {
@@ -90,9 +91,8 @@ export function property_value_display(tag: string, values: number[]) : JSX.Elem
         
     case 'TMAZE':
         return (
-            <span>TMAZE###</span>
-            //###<VarShowCorridorBits value={ values[0]*0x100+values[1] } />
-        )
+            <VarShowTMazeList value={ values[0]*0x100+values[1] } />
+        );
     }
     
     return null;
@@ -186,5 +186,21 @@ export function ArgShowMazeDir({ value }: { value:number })
     
     return (
         <span>{ value }:<i>{ dir }</i></span>
+    );
+}
+
+function VarShowTMazeList({ value }: { value:number })
+{
+    let rctx = useContext(ReactCtx);
+    let pos = tmaze_props.indexOf(value);
+    if (pos < 0) {
+        return (
+            <span><i>invalid tmaze address:</i> { value }</span>
+        );
+    }
+    
+    let tmaze = rctx.zstate.specifics.tmaze[pos];
+    return (
+        <span>{ tmaze.join(' ') }</span>
     );
 }

@@ -3,8 +3,8 @@ import { GnustoEngine, ZState } from '../visi/zstate';
 import { gamedat_routine_names, gamedat_global_names, gamedat_string_map } from '../visi/gamedat';
 
 // Translucent rooms A-I.
-const tmaze_rooms = [ 240, 174, 119, 56, 231, 163, 104, 34, 216 ];
-const tmaze_props = [ 11351, 11385, 11419, 11453, 11487, 11521, 11555, 11589, 11623 ];
+export const tmaze_rooms = [ 240, 174, 119, 56, 231, 163, 104, 34, 216 ];
+export const tmaze_props = [ 11351, 11385, 11419, 11453, 11487, 11521, 11555, 11589, 11623 ];
 
 export type SpecificEnchanter = {
     tmaze: number[][],
