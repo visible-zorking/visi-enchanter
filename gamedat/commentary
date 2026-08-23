@@ -35,7 +35,7 @@ src:GLOBALS-31: This refers to the word `ZZMGCK` in [~obj:LOCAL-GLOBALS], above.
 
 obj:PLAYER: Yes, the player’s printed name is “cretin”, although the game rarely says so. (The error for boarding a vehicle you’re already in mentions it.) This sort of sarcastic insult hasn’t aged too well, but MIT culture had a lot of it. Compare [*glob:WINNER], and also the old MIT [Jargon File|https://jargon-file.org/archive/jargon-1.0.0.33.dos.txt].
 	Note that if you refer to `ME`, you get the [*obj:ME] global object, not the `PLAYER`.
-	See also the [obj:ADVENTURER], which -- for this one game -- is an NPC.
+	See also the [obj:ADVENTURER], which – for this one game – is an NPC.
 
 obj:ME: A global object which is always in scope. Commands referring to `ME` hit this, rather than [*obj:PLAYER], which is a stub that moves around the map.
 	Because of this, parser messages mostly refer to you as “you”, even though the [*obj:PLAYER]’s printed name is “cretin”.
@@ -47,6 +47,28 @@ glob:WINNER: `WINNER` is the actor in the current command.
 glob:HERE: The location of the [glob:WINNER].
 
 
+rtn:GO: Set up the world at the start of the game. Start the timers. Print the banner. Set all those useful globals like [~glob:HERE] and [~glob:WINNER].
+
+rtn:JIGS-UP: This routine handles the [~glob:WINNER]’s demise, whether that is the [~obj:PLAYER] or an NPC obeying a command.
+	If the [~glob:WINNER] is protected by `OZMOO` (see [glob:DEATH-CHEATED]), the death is avoided – unless the second argument is explicitly false (`<>`), which indicates a death to terrible for `OZMOO`.
+	Failing all that, Belboz will resurrect you three times (see [glob:DEATHS]). Or really four, but the last time you are demoted and the game ends.
+
+glob:DEATH-CHEATED: The person currently protected by `OZMOO`.
+
+glob:DEATHS: The number of times Belboz has interceded to prevent your death.
+
+
+glob:LIT: Whether the current location has light. Set by calling the [rtn:LIT?] routine.
+
+rtn:LIT?: Determine whether a given location has light. This is true if the room or anything in it has [attr:ONBIT].
+	We also check for rooms which have [attr:LIGHTBIT] but *not* [attr:ONBIT]. Such rooms are only lit during the day. However, at some point the developers seem to have decided that nights always have [starlight|~src:VERBS-90] and [moonlight|~src:VERBS-93]. So all outdoor rooms have [attr:ONBIT].
+	This routine is used to set the [glob:LIT] variable.
+
+attr:ONBIT: Indicates rooms and objects that provide light. Compare [attr:LIGHTBIT].
+
+attr:LIGHTBIT: This indicates objects which can be switched on and off. When on, they will also have [attr:ONBIT].
+	(`FROTZ`ed objects have `LIGHTBIT` temporarily, which means they can be un-`FROTZ`ed with a simple `TURN OFF` command. This is not intuitive, but it seems to be deliberate.)
+	Outdoor rooms, and rooms which can see the sky, also have `LIGHTBIT`. This seems to have been intended to support rooms that are dark only at night. However, this feature is not used; see [rtn:LIT?]
 
 attr:RMUNGBIT: Indicates ruined objects and rooms.
 
