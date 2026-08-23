@@ -207,12 +207,14 @@ function VarShowTMazeList({ value }: { value:number })
     for (let dir = 0; dir <= 15; dir += 2) {
         if (tmaze[dir]) {
             let comma = (ells.length ? ', ' : '');
-            let open = (tmaze[dir+1] ? '(drawn)':'(erased)');
             ells.push(
                 <span key={ dir }>
                     { comma }
                     <ArgShowObject value={ tmaze[dir] } />:{' '}
-                    { tmaze_dirs[dir+1] } { open }
+                    <i>{ tmaze_dirs[dir+1] }</i>{' '}
+                    { tmaze[dir+1]
+                      ? <b>drawn</b>
+                      : <span>erased</span> }
                 </span>
             )
         }
