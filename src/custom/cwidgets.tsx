@@ -23,7 +23,7 @@ export function contains_label(obj: ObjectData) : string
 
 export function sorter_for_key(key: number, zstate: ZStatePlus) : (roots:ZObject[], map:Map<number, ZObject>) => void
 {
-    let originobj: number = gamedat_ids.PLAYER;
+    let originobj: number = (key ? key : gamedat_ids.PLAYER);
 
     return function(roots: ZObject[], map: Map<number, ZObject>) {
         let advroom = originobj;
@@ -53,9 +53,22 @@ export function sorter_for_key(key: number, zstate: ZStatePlus) : (roots:ZObject
 
 export function ObjListSorter({ followKey, setFollowKey } : { followKey:number, setFollowKey:(v:number)=>void })
 {
+    let follow: string = (followKey == 0) ? 'player' : 'adventurer';
+    
+    function evhan_follow_change(val: string) {
+        if (val == 'player')
+            setFollowKey(0);
+        else if (val == 'adventurer')
+            setFollowKey(gamedat_ids.ADVENTURER);
+    }
+    
     return (
         <div>
-            (Following Player)
+            Follow{' '}
+            <input id="followplayer_radio" type="radio" name="follow" value="player" checked={ follow=='player' } onChange={ (ev) => evhan_follow_change('player') } />
+            <label htmlFor="followplayer_radio">Player</label>{' '}
+            <input id="followadventurer_radio" type="radio" name="follow" value="adventurer" checked={ follow=='adventurer' } onChange={ (ev) => evhan_follow_change('adventurer') } />
+            <label htmlFor="followadventurer_radio">Adventurer</label>
         </div>
     );
 }
