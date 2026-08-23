@@ -34869,6 +34869,19 @@ var bundle = (function (exports) {
       document.body.className = cla;
   }
 
+  // Translucent rooms A-I.
+  const tmaze_rooms = [240, 174, 119, 56, 231, 163, 104, 34, 216];
+  const tmaze_props = [11351, 11385, 11419, 11453, 11487, 11521, 11555, 11589, 11623];
+  function get_specifics(engine, state) {
+      let tmaze = [];
+      for (let addr of tmaze_props) {
+          let ls = [];
+          for (let ix = 1; ix < 32; ix += 2)
+              ls.push(engine.getByte(addr + ix));
+          tmaze.push(ls);
+      }
+      return { tmaze };
+  }
   function show_commentary_hook(topic, engine) {
       return null;
   }
@@ -36163,9 +36176,9 @@ var bundle = (function (exports) {
   function property_value_display(tag, values) {
       switch (tag) {
           case 'TMAZE':
-              return (jsxRuntimeExports.jsx("span", { children: "TMAZE###" })
-              //###<VarShowCorridorBits value={ values[0]*0x100+values[1] } />
-              );
+              return (jsxRuntimeExports.jsx(VarShowTMazeList, { value: values[0] * 0x100 + values[1] }));
+          case 'MAZEPOINT':
+              return (jsxRuntimeExports.jsx(VarShowTMazePoint, { value: values[0] * 0x100 + values[1] }));
       }
       return null;
   }
@@ -36203,35 +36216,44 @@ var bundle = (function (exports) {
       }
       return (jsxRuntimeExports.jsxs("span", { children: [value, " ", jsxRuntimeExports.jsxs("i", { children: ["(~", hour, " ", ampm, ")"] })] }));
   }
+  const tmaze_dirs = {
+      1: 'nw',
+      3: 'west',
+      5: 'sw',
+      7: 'south',
+      9: 'se',
+      11: 'east',
+      13: 'ne',
+      15: 'north',
+  };
+  const tmaze_letters = 'BRKHJMVFP';
   function ArgShowMazeDir({ value }) {
-      let dir = '???';
-      switch (value) {
-          case 1:
-              dir = 'nw';
-              break;
-          case 3:
-              dir = 'west';
-              break;
-          case 5:
-              dir = 'sw';
-              break;
-          case 7:
-              dir = 'south';
-              break;
-          case 9:
-              dir = 'se';
-              break;
-          case 11:
-              dir = 'east';
-              break;
-          case 13:
-              dir = 'ne';
-              break;
-          case 15:
-              dir = 'north';
-              break;
-      }
+      let dir = tmaze_dirs[value] || '???';
       return (jsxRuntimeExports.jsxs("span", { children: [value, ":", jsxRuntimeExports.jsx("i", { children: dir })] }));
+  }
+  function VarShowTMazePoint({ value }) {
+      if (value < 1 || value > 9) {
+          jsxRuntimeExports.jsxs("span", { children: [value, " (room ???)"] });
+      }
+      return (jsxRuntimeExports.jsxs("span", { children: [value, " (room ", jsxRuntimeExports.jsx(ArgShowObject, { value: tmaze_rooms[value - 1] }), ")"] }));
+  }
+  function VarShowTMazeList({ value }) {
+      let rctx = reactExports.useContext(ReactCtx);
+      let pos = tmaze_props.indexOf(value);
+      if (pos < 0) {
+          return (jsxRuntimeExports.jsxs("span", { children: [jsxRuntimeExports.jsx("i", { children: "invalid tmaze address:" }), " ", value] }));
+      }
+      let tmaze = rctx.zstate.specifics.tmaze[pos];
+      let ells = [];
+      for (let dir = 0; dir <= 15; dir += 2) {
+          if (tmaze[dir]) {
+              let comma = (ells.length ? ', ' : '');
+              ells.push(jsxRuntimeExports.jsxs("span", { children: [comma, jsxRuntimeExports.jsx(ArgShowObject, { value: tmaze[dir] }), ":", ' ', jsxRuntimeExports.jsx("i", { children: tmaze_dirs[dir + 1] }), ' ', tmaze[dir + 1]
+                          ? jsxRuntimeExports.jsx("b", { children: "drawn" })
+                          : jsxRuntimeExports.jsx("span", { children: "erased" })] }, dir));
+          }
+      }
+      return (jsxRuntimeExports.jsxs("span", { children: ["(letter ", jsxRuntimeExports.jsxs("span", { className: "PrintString", children: ["\u201C", tmaze_letters[pos], "\u201D"] }), "):", jsxRuntimeExports.jsx("br", {}), ells] }));
   }
 
   function new_context$5() {
@@ -36873,7 +36895,7 @@ var bundle = (function (exports) {
       }
       let propvalues = null;
       if (prop.vartype) {
-          propvalues = property_value_display(prop.vartype);
+          propvalues = property_value_display(prop.vartype, values);
       }
       if (propvalues == null) {
           switch (prop.vartype || '') {
@@ -37427,7 +37449,7 @@ var bundle = (function (exports) {
   function AboutPage() {
       let rctx = reactExports.useContext(ReactCtx);
       let zstate = rctx.zstate;
-      let lastupdate = 'August 22, 2026';
+      let lastupdate = 'August 23, 2026';
       let curroom = '???';
       let firstobj = '';
       let map = new Map();
@@ -37490,7 +37512,7 @@ var bundle = (function (exports) {
   };
 
   function FeeliesPage() {
-      return (jsxRuntimeExports.jsx("div", { className: "ScrollContent", children: jsxRuntimeExports.jsxs("div", { className: "FeeliesPage", children: [jsxRuntimeExports.jsx("h2", { children: "How to do magic" }), jsxRuntimeExports.jsxs("p", { children: ["The magic of ", jsxRuntimeExports.jsx("i", { children: "Enchanter" }), " is lifted from Dungeons & Dragons (which, as everyone knows, lifted it from Jack Vance)."] }), jsxRuntimeExports.jsx("h3", { children: "Your spell book" }), jsxRuntimeExports.jsxs("p", { children: ["To cast a spell, you must first memorize it from your spell book. Type ", jsxRuntimeExports.jsx("code", { children: "READ BOOK" }), " to see the list of spells at your disposal. Then you might type", ' ', jsxRuntimeExports.jsx("code", { children: "LEARN FROTZ" }), " to absorb the ", jsxRuntimeExports.jsx("code", { children: "FROTZ" }), ' ', "spell (\u201Ccause something to give off light\u201D) into your mind."] }), jsxRuntimeExports.jsxs("p", { children: ["Type ", jsxRuntimeExports.jsx("code", { children: "SPELLS" }), " to check the spells you currently have ready in mind. In fact you begin your quest with three spells memorized; but there\u2019s a fourth in your spell book. Don\u2019t lose track."] }), jsxRuntimeExports.jsxs("p", { children: ["Now it\u2019s time to make magic. You could type", ' ', jsxRuntimeExports.jsx("code", { children: "CAST FROTZ ON LANTERN" }), ", or just", ' ', jsxRuntimeExports.jsx("code", { children: "FROTZ LANTERN" }), " for short."] }), jsxRuntimeExports.jsxs("p", { children: ["Once loosed, the puissant syllables of power fly from your mind and are lost! You must ", jsxRuntimeExports.jsx("code", { children: "LEARN" }), ' ', "the spell again to cast it again."] }), jsxRuntimeExports.jsx("p", { children: "Initially you can hold only four spells in your mind at a time. (Duplicates are allowed.) As you progress, the limit will increase." }), jsxRuntimeExports.jsx("h3", { children: "Spell scrolls" }), jsxRuntimeExports.jsxs("p", { children: ["In your travels you will undoubtedly discover scrolls containing new and potent spells. ", jsxRuntimeExports.jsx("code", { children: "READ SCROLL" }), ' ', "to see the spell\u2019s name and effect."] }), jsxRuntimeExports.jsx("p", { children: "You can cast a spell directly from a scroll in your hand. However, this is wasteful! Just like spells in your mind, a scroll spell disappears when cast \u2014 taking the scroll with it." }), jsxRuntimeExports.jsxs("p", { children: ["Instead, you should copy the spell into your book with the ", jsxRuntimeExports.jsx("code", { children: "GNUSTO" }), " spell. If you discover a", ' ', jsxRuntimeExports.jsx("code", { children: "REZROV" }), " scroll, for example, you would type ", jsxRuntimeExports.jsx("code", { children: "GNUSTO REZROV" }), ". (Remember to target the spell, not the scroll.) Once the spell is in your spell book, you can ", jsxRuntimeExports.jsx("code", { children: "LEARN" }), " it and cast it as many times as you want."] }), jsxRuntimeExports.jsxs("p", { children: ["Note that you know ", jsxRuntimeExports.jsx("code", { children: "GNUSTO" }), " spell by heart. You will never forget it, so you never have to", ' ', jsxRuntimeExports.jsx("code", { children: "LEARN GNUSTO" }), "."] }), jsxRuntimeExports.jsxs("p", { children: ["A few scrolls are so powerful that they cannot be copied with ", jsxRuntimeExports.jsx("code", { children: "GNUSTO" }), ". Such a spell can ", jsxRuntimeExports.jsx("em", { children: "only" }), ' ', "be cast from its scroll \u2014 which means you can only cast it once. Choose your opportunity wisely."] }), jsxRuntimeExports.jsx("h2", { children: "The prophecy" }), jsxRuntimeExports.jsxs("p", { children: [jsxRuntimeExports.jsx("i", { children: "Enchanter" }), " originally came with a sealed parchment; this is the document Belboz reveals at the start of the game. It explains why a novice enchanter is being sent to deal with a world-threatening evil. It also lists your starting spells."] }), jsxRuntimeExports.jsx("p", { children: "Note: This is scanned from the \u201CGrey Box\u201D release of the game. The original 1984 \u201CFolio\u201D had an identical document at a larger size. This one was easier to scan." }), jsxRuntimeExports.jsxs("p", { children: ["For a scan of the complete manual, visit the", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://infodoc.plover.net/manuals/temp/enchante.pdf', text: 'InfoDoc Project' }), ". For high-resolution scans, visit the", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://archive.org/details/Infocom_Enchanter_Apple/', text: 'Internet Archive' }), "."] }), jsxRuntimeExports.jsx(FeelieLink, { url: 'spell-list-outside.jpeg', width: 250, height: 145, text: 'Parchment, folded' }), jsxRuntimeExports.jsx(FeelieLink, { url: 'spell-list-inside.jpeg', width: 250, height: 640, text: 'Parchment, unfolded' })] }) }));
+      return (jsxRuntimeExports.jsx("div", { className: "ScrollContent", children: jsxRuntimeExports.jsxs("div", { className: "FeeliesPage", children: [jsxRuntimeExports.jsx("h2", { children: "How to do magic" }), jsxRuntimeExports.jsxs("p", { children: ["The magic of ", jsxRuntimeExports.jsx("i", { children: "Enchanter" }), " is lifted from Dungeons & Dragons (which, as everyone knows, lifted it from Jack Vance)."] }), jsxRuntimeExports.jsx("h3", { children: "Your spell book" }), jsxRuntimeExports.jsxs("p", { children: ["To cast a spell, you must first memorize it from your spell book. Type ", jsxRuntimeExports.jsx("code", { children: "READ BOOK" }), " to see the list of spells at your disposal. Then you might type", ' ', jsxRuntimeExports.jsx("code", { children: "LEARN FROTZ" }), " to absorb the ", jsxRuntimeExports.jsx("code", { children: "FROTZ" }), ' ', "spell (\u201Ccause something to give off light\u201D) into your mind."] }), jsxRuntimeExports.jsxs("p", { children: ["Type ", jsxRuntimeExports.jsx("code", { children: "SPELLS" }), " to check the spells you currently have ready in mind. In fact you begin your quest with three spells memorized; but there\u2019s a fourth in your spell book. Don\u2019t lose track."] }), jsxRuntimeExports.jsxs("p", { children: ["Now it\u2019s time to make magic. You could type", ' ', jsxRuntimeExports.jsx("code", { children: "CAST FROTZ ON LANTERN" }), ", or just", ' ', jsxRuntimeExports.jsx("code", { children: "FROTZ LANTERN" }), " for short."] }), jsxRuntimeExports.jsxs("p", { children: ["Once loosed, the puissant syllables of power fly from your mind and are lost! You must ", jsxRuntimeExports.jsx("code", { children: "LEARN" }), ' ', "the spell again to cast it again."] }), jsxRuntimeExports.jsx("p", { children: "Initially you can hold only four spells in your mind at a time. (Duplicates are allowed.) As you progress, the limit will increase." }), jsxRuntimeExports.jsx("h3", { children: "Spell scrolls" }), jsxRuntimeExports.jsxs("p", { children: ["In your travels you will undoubtedly discover scrolls containing new and potent spells. ", jsxRuntimeExports.jsx("code", { children: "READ SCROLL" }), ' ', "to see the spell\u2019s name and effect."] }), jsxRuntimeExports.jsx("p", { children: "You can cast a spell directly from a scroll in your hand. However, this is wasteful! Just like spells in your mind, a scroll spell disappears when cast \u2014 taking the scroll with it." }), jsxRuntimeExports.jsxs("p", { children: ["Instead, you should copy the spell into your book with the ", jsxRuntimeExports.jsx("code", { children: "GNUSTO" }), " spell. If you discover a", ' ', jsxRuntimeExports.jsx("code", { children: "REZROV" }), " scroll, for example, you would type ", jsxRuntimeExports.jsx("code", { children: "GNUSTO REZROV" }), ". (Remember to target the spell, not the scroll.) Once the spell is in your spell book, you can ", jsxRuntimeExports.jsx("code", { children: "LEARN" }), " it and cast it as many times as you want."] }), jsxRuntimeExports.jsxs("p", { children: ["Note that you know ", jsxRuntimeExports.jsx("code", { children: "GNUSTO" }), " spell by heart. You will never forget it, so you never have to", ' ', jsxRuntimeExports.jsx("code", { children: "LEARN GNUSTO" }), "."] }), jsxRuntimeExports.jsxs("p", { children: ["A few scrolls are so powerful that they cannot be copied with ", jsxRuntimeExports.jsx("code", { children: "GNUSTO" }), ". Such a spell can ", jsxRuntimeExports.jsx("em", { children: "only" }), ' ', "be cast from its scroll \u2014 which means you can only cast it once. Choose your opportunity wisely."] }), jsxRuntimeExports.jsx("h3", { children: "Other useful commands" }), jsxRuntimeExports.jsxs("p", { children: [jsxRuntimeExports.jsx("code", { children: "TIME" }), ": Show the approximate time of day.", jsxRuntimeExports.jsx("br", {}), jsxRuntimeExports.jsx("code", { children: "DIAGNOSE" }), ": Show your physical condition.", jsxRuntimeExports.jsx("br", {}), jsxRuntimeExports.jsx("code", { children: "SPELLS" }), ": List the spells you have memorized.", jsxRuntimeExports.jsx("br", {})] }), jsxRuntimeExports.jsx("h2", { children: "The prophecy" }), jsxRuntimeExports.jsxs("p", { children: [jsxRuntimeExports.jsx("i", { children: "Enchanter" }), " originally came with a sealed parchment; this is the document Belboz reveals at the start of the game. It explains why a novice enchanter is being sent to deal with a world-threatening evil. It also lists your starting spells."] }), jsxRuntimeExports.jsx("p", { children: "Note: This is scanned from the \u201CGrey Box\u201D release of the game. The original 1984 \u201CFolio\u201D had an identical document at a larger size. This one was easier to scan." }), jsxRuntimeExports.jsxs("p", { children: ["For a scan of the complete manual, visit the", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://infodoc.plover.net/manuals/temp/enchante.pdf', text: 'InfoDoc Project' }), ". For high-resolution scans, visit the", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://archive.org/details/Infocom_Enchanter_Apple/', text: 'Internet Archive' }), "."] }), jsxRuntimeExports.jsx(FeelieLink, { url: 'spell-list-outside.jpeg', width: 250, height: 145, text: 'Parchment, folded' }), jsxRuntimeExports.jsx(FeelieLink, { url: 'spell-list-inside.jpeg', width: 250, height: 640, text: 'Parchment, unfolded' })] }) }));
   }
   function FeelieLink({ url, text, width, height }) {
       return (jsxRuntimeExports.jsxs("p", { className: "Feelie", children: [jsxRuntimeExports.jsx("a", { href: './pic/' + url, target: "_blank", children: jsxRuntimeExports.jsx("img", { src: './pic/thumb/' + url, width: width, height: height }) }), jsxRuntimeExports.jsx("br", {}), jsxRuntimeExports.jsx("a", { href: './pic/' + url, target: "_blank", children: text })] }));
@@ -37814,6 +37836,7 @@ var bundle = (function (exports) {
       }
       let appctx = {
           launchtoken: launchtoken,
+          reportspecs: get_specifics,
       };
       set_app_context(engine, initprefs, appctx);
       const appel = document.getElementById('appbody');
