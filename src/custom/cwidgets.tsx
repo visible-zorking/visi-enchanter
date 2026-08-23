@@ -117,6 +117,12 @@ export function stack_call_arg_display(tag: string, value: number) : JSX.Element
         return (
             <ArgShowObject value={ value } />
         )
+
+    case 'TDIR':
+        return (
+            <ArgShowMazeDir value={ value } />
+        )
+        
     }
 
     return null;
@@ -147,3 +153,38 @@ export function VarShowTimeOfDay({ value }: { value:number })
     );
 }
 
+export function ArgShowMazeDir({ value }: { value:number })
+{
+    let dir = '???';
+    
+    switch (value) {
+    case 1:
+        dir = 'nw';
+        break;
+    case 3:
+        dir = 'west';
+        break;
+    case 5:
+        dir = 'sw';
+        break;
+    case 7:
+        dir = 'south';
+        break;
+    case 9:
+        dir = 'se';
+        break;
+    case 11:
+        dir = 'east';
+        break;
+    case 13:
+        dir = 'ne';
+        break;
+    case 15:
+        dir = 'north';
+        break;
+    }
+    
+    return (
+        <span>{ value }:<i>{ dir }</i></span>
+    );
+}
