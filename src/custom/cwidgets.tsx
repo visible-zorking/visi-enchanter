@@ -169,6 +169,8 @@ const tmaze_dirs: { [key:number]: string } = {
     15: 'north',
 };
 
+const tmaze_letters = 'BRKHJMVFP';
+
 export function ArgShowMazeDir({ value }: { value:number })
 {
     let dir = tmaze_dirs[value] || '???';
@@ -217,6 +219,9 @@ function VarShowTMazeList({ value }: { value:number })
     }
     
     return (
-        <span>{ ells }</span>
+        <span>
+            (letter <span className="PrintString">&#x201C;{ tmaze_letters[pos] }&#x201D;</span>):<br />
+            { ells }
+        </span>
     );
 }
