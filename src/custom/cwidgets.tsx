@@ -153,36 +153,20 @@ export function VarShowTimeOfDay({ value }: { value:number })
     );
 }
 
+const tmaze_dirs: { [key:number]: string } = {
+    1: 'nw',
+    3: 'west',
+    5: 'sw',
+    7: 'south',
+    9: 'se',
+    11: 'east',
+    13: 'ne',
+    15: 'north',
+};
+
 export function ArgShowMazeDir({ value }: { value:number })
 {
-    let dir = '???';
-    
-    switch (value) {
-    case 1:
-        dir = 'nw';
-        break;
-    case 3:
-        dir = 'west';
-        break;
-    case 5:
-        dir = 'sw';
-        break;
-    case 7:
-        dir = 'south';
-        break;
-    case 9:
-        dir = 'se';
-        break;
-    case 11:
-        dir = 'east';
-        break;
-    case 13:
-        dir = 'ne';
-        break;
-    case 15:
-        dir = 'north';
-        break;
-    }
+    let dir = tmaze_dirs[value] || '???';
     
     return (
         <span>{ value }:<i>{ dir }</i></span>
@@ -200,7 +184,23 @@ function VarShowTMazeList({ value }: { value:number })
     }
     
     let tmaze = rctx.zstate.specifics.tmaze[pos];
+
+    let ells = [];
+    for (let dir = 0; dir <= 15; dir += 2) {
+        if (tmaze[dir]) {
+            let comma = (ells.length ? ', ' : '');
+            let open = (tmaze[dir+1] ? '(drawn)':'(erased)');
+            ells.push(
+                <span key={ dir }>
+                    { comma }
+                    <ArgShowObject value={ tmaze[dir] } />:{' '}
+                    { tmaze_dirs[dir+1] } { open }
+                </span>
+            )
+        }
+    }
+    
     return (
-        <span>{ tmaze.join(' ') }</span>
+        <span>{ ells }</span>
     );
 }
