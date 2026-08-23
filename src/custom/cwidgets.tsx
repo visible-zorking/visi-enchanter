@@ -7,7 +7,7 @@ import { ReactCtx, StackCallCtx } from '../visi/context';
 import { ArgShowObject, ArgShowProperty } from '../visi/actshowers';
 import { VarShowObject, VarShowProperty } from '../visi/globshow';
 import { gamedat_ids, gamedat_distances, gamedat_object_treesort } from '../visi/gamedat';
-import { tmaze_props } from './modgame';
+import { tmaze_rooms, tmaze_props } from './modgame';
 
 export function contains_label(obj: ObjectData) : string
 {
@@ -93,6 +93,11 @@ export function property_value_display(tag: string, values: number[]) : JSX.Elem
         return (
             <VarShowTMazeList value={ values[0]*0x100+values[1] } />
         );
+        
+    case 'MAZEPOINT':
+        return (
+            <VarShowTMazePoint value={ values[0]*0x100+values[1] } />
+        );
     }
     
     return null;
@@ -170,6 +175,17 @@ export function ArgShowMazeDir({ value }: { value:number })
     
     return (
         <span>{ value }:<i>{ dir }</i></span>
+    );
+}
+
+function VarShowTMazePoint({ value }: { value:number })
+{
+    if (value < 1 || value > 9) {
+        <span>{ value } (room ???)</span>
+    }
+    
+    return (
+        <span>{ value } (room <ArgShowObject value={ tmaze_rooms[value-1] } />)</span>
     );
 }
 
