@@ -75,6 +75,15 @@ export function FeeliesPage()
                     {' '}be cast from its scroll &#x2014; which means you can
                     only cast it once. Choose your opportunity wisely.
                 </p>
+                <h3>Other useful commands</h3>
+                <p>
+                    <code>TIME</code>: Show the approximate time of day.
+                    <br/>
+                    <code>DIAGNOSE</code>: Show your physical condition.
+                    <br/>
+                    <code>SPELLS</code>: List the spells you have memorized.
+                    <br/>
+                </p>
                 <h2>The prophecy</h2>
                 <p>
                     <i>Enchanter</i> originally came with a
