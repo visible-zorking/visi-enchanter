@@ -71,7 +71,7 @@ attr:LIGHTBIT: This indicates objects which can be switched on and off. When on,
 	Outdoor rooms, and rooms which can see the sky, also have `LIGHTBIT`. This seems to have been intended to support rooms that are dark only at night. However, this feature is not used; see [rtn:LIT?]
 
 
-glob:LOAD-ALLOWED: The maximum weight you can carry. This decreases as you become tired; see [rtn:I-TIRED]. When you rest, it returns to [glob:LOAD-MAX].
+glob:LOAD-ALLOWED: The maximum weight you can carry. This decreases as you become tired; see [rtn:I-TIRED]. When you rest, it is reset to [glob:LOAD-MAX].
 
 glob:LOAD-MAX: The maximum weight you can carry at full strength. (Compare [glob:LOAD-ALLOWED].)
 
