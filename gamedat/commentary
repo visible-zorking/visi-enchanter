@@ -53,6 +53,8 @@ rtn:JIGS-UP: This routine handles the [~glob:WINNER]’s demise, whether that is
 	If the [~glob:WINNER] is protected by `OZMOO` (see [glob:DEATH-CHEATED]), the death is avoided – unless the second argument is explicitly false (`<>`), which indicates a death to terrible for `OZMOO`.
 	Failing all that, Belboz will resurrect you three times (see [glob:DEATHS]). Or really four, but the last time you are demoted and the game ends.
 
+rtn:FINISH: This is called when the game is really, finally over. Display your score and offer the traditional `RESTORE`/`RESTART`/`QUIT` option.
+
 glob:DEATH-CHEATED: The person currently protected by `OZMOO`.
 
 glob:DEATHS: The number of times Belboz has interceded to prevent your death.
@@ -72,6 +74,11 @@ attr:ONBIT: Set for glowing objects and permanently-illuminated rooms. Compare [
 attr:LIGHTBIT: This indicates objects which can be switched on and off. When on, they will also have [attr:ONBIT].
 	(`FROTZ`ed objects have `LIGHTBIT` temporarily, which means they can be un-`FROTZ`ed with a simple `TURN OFF` command. This is not intuitive, but it seems to be deliberate. Except that if you `FROTZ` *yourself*, this doesn’t work, which is even more unintuitive.)
 	Outdoor rooms, and rooms which can see the sky, also have `LIGHTBIT`. This seems to have been intended to support rooms that are dark only at night. However, this feature is not used; see [rtn:LIT?]
+
+attr:BURNBIT: Set for objects which the player can `BURN`. (It might be a bad idea, but you can do it.)
+	This is different from [attr:LIGHTBIT], objects which the player can `TURN ON`.
+
+attr:FLAMEBIT: Most Infocom games use this to indicate objects which are on fire. However, *Enchanter* does not use `FLAMEBIT`. The [~obj:ETERNAL-FLAME], the only flaming object in the game, is handled as a special case by [~rtn:V-BURN].
 
 
 glob:LOAD-ALLOWED: The maximum weight you can carry. This decreases as you become tired; see [rtn:I-TIRED]. When you rest, it is reset to [glob:LOAD-MAX].
@@ -94,6 +101,20 @@ glob:C-TABLE: The timer table. See the “Timers” tab for a current listing.
 
 attr:RMUNGBIT: Indicates ruined objects and rooms.
 
+prop:MUNGDESC: A few rooms have a different description when ruined. This is it.
+
+attr:VILLAIN: Generally set for living beings, although they may or may not be villainous. The portraits in the [~obj:GALLERY] have it as well.
+	Compare [~attr:VICBIT].
+	The [~obj:PLAYER] has the `VILLAIN` flag, which leads to a few buggy messages. Try `HELLO ME`, for example.
+
+attr:VICBIT: Generally set for living beings, though not the [~obj:PLAYER]. The [~obj:MAGIC-ROPE] and the [~obj:MIRROR] have it as well.
+	This is almost the same as [~attr:VILLAIN], but some verbs use [~attr:VILLAIN] and some `VICBIT`, with no obvious pattern.
+
+attr:SCROLLBIT: Set for scrolls, naturally.
+
+attr:POINTBIT: Set for the nine points on the [~obj:TMAP].
+
+attr:TREASURE: Set for obviously valuable objects. You don't care, but the [obj:ADVENTURER] does.
 
 ### "registered trademark of" (2x)
 ### V-BURN double else  src:VERBS-1157
