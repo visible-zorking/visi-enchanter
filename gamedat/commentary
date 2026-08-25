@@ -60,14 +60,17 @@ glob:DEATHS: The number of times Belboz has interceded to prevent your death.
 
 glob:LIT: Whether the current location has light. Set by calling the [rtn:LIT?] routine.
 
-rtn:LIT?: Determine whether a given location has light. This is true if the room or anything in it has [attr:ONBIT].
+rtn:LIT?: Determine whether a given location has light. This is true if [glob:ALWAYS-LIT] is set, or if the room or anything in it has [attr:ONBIT].
 	We also check for rooms which have [attr:LIGHTBIT] but *not* [attr:ONBIT]. Such rooms are only lit during the day. However, at some point the developers seem to have decided that nights always have [starlight|~src:VERBS-90] and [moonlight|~src:VERBS-93]. So all outdoor rooms have [attr:ONBIT].
 	This routine is used to set the [glob:LIT] variable.
+
+glob:ALWAYS-LIT: If set, the world is always illuminated.
+	This is set if you `FROTZ ME` (see [here|~src:GLOBALS-140]). But there’s no way to turn it off. (Unlike other `FROTZ`ed objects; see [attr:LIGHTBIT].)
 
 attr:ONBIT: Set for glowing objects and permanently-illuminated rooms. Compare [attr:LIGHTBIT].
 
 attr:LIGHTBIT: This indicates objects which can be switched on and off. When on, they will also have [attr:ONBIT].
-	(`FROTZ`ed objects have `LIGHTBIT` temporarily, which means they can be un-`FROTZ`ed with a simple `TURN OFF` command. This is not intuitive, but it seems to be deliberate. Except that if your `FROTZ` *yourself*, this doesn’t work, which is even more unintuitive.)
+	(`FROTZ`ed objects have `LIGHTBIT` temporarily, which means they can be un-`FROTZ`ed with a simple `TURN OFF` command. This is not intuitive, but it seems to be deliberate. Except that if you `FROTZ` *yourself*, this doesn’t work, which is even more unintuitive.)
 	Outdoor rooms, and rooms which can see the sky, also have `LIGHTBIT`. This seems to have been intended to support rooms that are dark only at night. However, this feature is not used; see [rtn:LIT?]
 
 
