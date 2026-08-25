@@ -120,7 +120,7 @@ attr:SCROLLBIT: Set for scrolls, naturally.
 
 attr:POINTBIT: Set for the nine points on the [~obj:TMAP].
 
-attr:TREASURE: Set for obviously valuable objects. You don't care, but the [obj:ADVENTURER] does.
+attr:TREASURE: Set for obviously valuable objects. You don’t care, but the [obj:ADVENTURER] does.
 
 
 const:ZORK-NUMBER: The number of the Zorks shall be three! (Four, sir.) Four!
