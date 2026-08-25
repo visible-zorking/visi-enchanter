@@ -161,6 +161,11 @@ export function AboutPage()
                     &#x201D; collection and later collections.
                     I have therefore selected it for this exhibit.
                 </p>
+                <p>
+                    For a sneak peek at the game&#x2019;s earliest design
+                    document,{' '}
+                    <ExtWebLink url={ 'https://github.com/historicalsource/enchanter/blob/master/enchanter.txt' } text='see here' />.
+                </p>
                 <h2>Sources and acknowledgements</h2>
                 <p>
                     The game&#x2019;s source code was first{' '}
