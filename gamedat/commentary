@@ -11,6 +11,10 @@ ABOUT: Welcome to the commentary track!
 
 rtn:V-VERSION: Print the title, release, and serial number. This release is branded as “interactive fiction”, replacing the “INTERLOGIC Fantasy” label of the original release.
 
+src:VERBS-301: The source code says “registered trademark”, but the compiled game file prints only “trademark”. The source must have been edited after the game was last compiled.
+
+src:VERBS-810: The source code says “registered trademark”, but the compiled game file prints only “trademark”. The source must have been edited after the game was last compiled.
+
 GRAMMAR-LEGEND: This is the list of verb forms which the game recognizes. (Simple directions like `NORTH` are a special case; they’re not listed here.) These are compiled from the [SYNTAX|~src:SYNTAX-69] file.
 	Objects in a verb line have various flags which give hints about their usage. An object attribute (like `LIGHTBIT`) means that if the player doesn’t name an object, the parser will try to guess one with that attribute.
 	The other flag letters have specific meanings: **m**ultiple objects are accepted; the player must **h**ave the object; the player will automatically **t**ake the object; the object should be **i**n the room or **o**n the ground; the object should be **p**ossessed or **c**arried in a container. (Yes, they’re confusing. Infocom’s own docs say “No one really understands them except Stu” (Galley).)
@@ -110,21 +114,27 @@ attr:VILLAIN: Generally set for living beings, although they may or may not be v
 attr:VICBIT: Generally set for living beings, though not the [~obj:PLAYER]. The [~obj:MAGIC-ROPE] and the [~obj:MIRROR] have it as well.
 	This is almost the same as [~attr:VILLAIN], but some verbs use [~attr:VILLAIN] and some `VICBIT`, with no obvious pattern.
 
+ATTR:VICTIM: This flag is only set for the [~obj:DRAGON], and it’s never used. It’s almost certainly a typo for [attr:VICBIT].
+
 attr:SCROLLBIT: Set for scrolls, naturally.
 
 attr:POINTBIT: Set for the nine points on the [~obj:TMAP].
 
 attr:TREASURE: Set for obviously valuable objects. You don't care, but the [obj:ADVENTURER] does.
 
-### "registered trademark of" (2x)
-### V-BURN double else  src:VERBS-1157
-### ZORK-NUMBER
-### VICTIM (bad attr)
+
+const:ZORK-NUMBER: The number of the Zorks shall be three! (Four, sir.) Four!
+	Infocom had a running argument, or running gag, about whether *Enchanter* was really “Zork IV” or not. But the [Scenic View|relative:../zork3/#OBJ:VIEW-ROOM] in *Zork 3* referred to it as such.
+
+src:VERBS-1157: This last message is not compiled into the game file. It’s effectively an `ELSE` for the “`PRSO` in `WINNER`” `COND`, which already has an `ELSE` (`T`) clause directly above (the “catches fire and is consumed” response). So it can never run, and the compiler optimizes it out.
+
+rtn:V-GROSS-OUT: The command `GROSS OUT` is not implemented in any other Infocom game. Why here? Perhaps because there is a [~obj:SILVER-SPOON], and some tester tried `GAG ME WITH A SPOON` (which is also supported).
+
 ### purple shift?
-### LIGHTBIT means outdoors?
 ### Necromancer
 ### NIGHTFALL starts real late (TIME-TABLE)
-### V-GROSS-OUT (only Enchanter)
+
+### [SCENIC-VIEW|relative:../zork3/#RTN:ZORK-IV-F]
 
 ### design doc: https://github.com/historicalsource/enchanter/blob/master/enchanter.txt
 
