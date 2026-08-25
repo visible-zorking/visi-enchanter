@@ -103,6 +103,15 @@ glob:C-DEMONS: Indicates how much of the timer table is used for daemons.
 glob:C-TABLE: The timer table. See the “Timers” tab for a current listing.
 
 
+rtn:I-MUNG-ROOM: A timer which periodically applies ruination ([attr:RMUNGBIT]) to the rooms in [~glob:MUNG-ROOM-TABLE], one by one.
+
+rtn:I-SCURRY: Timer for occasional atmospheric messages.
+
+rtn:I-TIRED: The sleepiness timer. As you get more tired, your weight limit ([~glob:LOAD-ALLOWED]) and spell limit ([~glob:SPELL-MAX]) decrease; your chance of fumbling objects ([~glob:FUMBLE-NUMBER], [~glob:FUMBLE-PROB]) increases. When [glob:AWAKE] reaches 10, you collapse.
+
+glob:AWAKE: How tired you are. -1 means fully awake. The [rtn:I-TIRED] timer increases it periodically; when it reaches 10, you collapse.
+
+
 attr:RMUNGBIT: Indicates ruined objects and rooms.
 
 prop:MUNGDESC: A few rooms have a different description when ruined. This is it.
@@ -121,6 +130,9 @@ attr:SCROLLBIT: Set for scrolls, naturally.
 attr:POINTBIT: Set for the nine points on the [~obj:TMAP].
 
 attr:TREASURE: Set for obviously valuable objects. You don’t care, but the [obj:ADVENTURER] does.
+
+
+### many comments about the ADVENTURER
 
 
 const:ZORK-NUMBER: The number of the Zorks shall be three! (Four, sir.) Four!
