@@ -1,0 +1,106 @@
+<?xml version="1.0" ?><!-- Created with Inkscape (http://www.inkscape.org/) --><svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" width="3500" height="1200" viewBox="0 0 926.04165 317.5" version="1.1" id="svg1">
+  
+  <style id="style1">svg.DarkTheme { filter: invert(90%) hue-rotate(180deg); }
+#roomlayer rect { fill:#F8F0E8; stroke:#000; stroke-width:0.7; }
+#roomlayer rect.Selected { fill:#FFD080; }
+#mobilelayer g.Offstage { display:none; }
+#connlayer .Invisible { display:none; }
+
+@font-face {
+    font-family: "Lato";
+    font-style: normal;
+    src: url("../visiterp/font/Lato-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lato";
+    font-style: italic;
+    src: url("../visiterp/font/Lato-Italic.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: bold;
+    src: url("../visiterp/font/Lato-Bold.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Lato";
+    font-style: italic;
+    font-weight: bold;
+    src: url("../visiterp/font/Lato-BoldItalic.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Courier Prime";
+    font-style: normal;
+    src: url("../visiterp/font/CourierPrime-Regular.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Courier Prime";
+    font-style: normal;
+    font-weight: bold;
+    src: url("../visiterp/font/CourierPrime-Bold.ttf") format("truetype");
+}
+</style>
+  <defs id="defs1">
+    <marker style="overflow:visible" id="Dot-3" refX="0" refY="0" orient="auto" markerWidth="0.34999999" markerHeight="0.34999999" viewBox="0 0 1 1" preserveAspectRatio="xMidYMid">
+      <path transform="scale(0.5)" style="fill:#6292df;fill-opacity:0.6;fill-rule:evenodd;stroke:none" d="M 5,0 C 5,2.76 2.76,5 0,5 -2.76,5 -5,2.76 -5,0 c 0,-2.76 2.3,-5 5,-5 2.76,0 5,2.24 5,5 z" id="path17-8"/>
+    </marker>
+  </defs>
+  
+  <g id="decorlayer">
+    <path style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#f1f1f1;fill-opacity:1;stroke:#c8c8c8;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:stroke fill markers;stop-color:#000000;stop-opacity:1" d="M 9.5250244,57.150003 V 91.545854 C -24.870823,118.0042 -75.141672,112.71253 -130.70417,112.71253 V 14.81667 C -72.495835,9.5250026 -19.579156,33.337505 9.5250244,57.150003 Z" id="path143"/>
+    <rect id="rect18" width="15.874998" height="15.874999" x="153.45833" y="161.39584" ry="2.6458292" style="display:inline;fill:#f8f8f8;stroke:#a9a9a9;stroke-width:0.7;fill-opacity:1;stroke-opacity:1"/>
+  </g>
+  <g id="connlayer" style="display:inline">
+    <path style="fill:none;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers;stop-color:#000000;stop-opacity:1" d="M 161.39583,161.39584 V 149.48959" id="path56"/>
+    <path style="fill:none;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 206.37499,105.83334 h 71.4375" id="path160"/>
+    <path style="fill:none;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers;stop-color:#000000;stop-opacity:1" d="M 66.14583,105.83334 H 13.229166" id="path15"/>
+    <path style="fill:none;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers" d="m 71.437497,105.83334 63.499993,63.5 63.5,-63.5 -63.5,-63.500005 z" id="path18"/>
+    <path style="fill:none;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers;stop-color:#000000;stop-opacity:1" d="M 190.49999,58.208335 177.27083,71.437504" id="path19"/>
+    <path style="fill:none;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;paint-order:stroke fill markers;stop-color:#000000;stop-opacity:1" d="M 97.895829,71.437504 V 58.208335" id="path55"/>
+  </g>
+  <g id="layer1" style="display:inline"/>
+  <g id="roomlayer" style="display:inline">
+    <rect id="r-long-road" width="21.166666" height="15.875001" x="21.166666" y="97.895836" ry="2.6458292"/>
+    <rect id="r-west-fork" width="21.166666" height="15.875001" x="58.208332" y="97.895836" ry="2.6458292"/>
+    <rect id="r-shack-room" width="21.166666" height="15.875001" x="89.958328" y="68.791672" ry="2.6458292"/>
+    <rect id="r-shack-east" width="21.166666" height="15.875001" x="124.35416" y="37.041668" ry="2.6458292"/>
+    <rect id="r-dusty-road" width="21.166666" height="15.875001" x="89.958328" y="127.00001" ry="2.6458292"/>
+    <rect id="r-village" width="21.166666" height="15.875001" x="148.16666" y="137.58334" ry="2.6458292"/>
+    <rect id="r-village-east" width="21.166666" height="15.875001" x="166.6875" y="119.06251" ry="2.6458292"/>
+    <rect id="r-east-fork" width="21.166666" height="15.875001" x="190.49998" y="97.895836" ry="2.6458292"/>
+    <rect id="r-trail-head" width="21.166666" height="15.875001" x="158.74998" y="68.791672" ry="2.6458292"/>
+    <rect id="r-shady-brook" width="21.166666" height="15.875001" x="187.85416" y="44.979168" ry="2.6458292"/>
+    <rect id="r-hairpin-loop" width="21.166666" height="15.875001" x="124.35416" y="158.75002" ry="2.6458292"/>
+    <rect id="r-mountain-trail" width="21.166666" height="15.875001" x="137.58333" y="116.41667" ry="2.6458292"/>
+    <rect id="r-vista" width="21.166666" height="15.875001" x="124.35416" y="92.604172" ry="2.6458292"/>
+    <rect id="r-western-road" width="21.166666" height="15.875001" x="230.18748" y="97.895836" ry="2.6458292"/>
+    <rect id="r-west-castle" width="21.166666" height="15.875001" x="267.22916" y="97.895836" ry="2.6458292"/>
+    <rect id="r-shack" width="15.874999" height="15.874999" x="89.958328" y="44.979168" ry="2.6458292"/>
+  </g>
+  <g id="mobilelayer">
+    <g id="mob-floyd" transform="translate(15.875,15.874998)">
+      <rect style="fill:#dcd7fa;fill-opacity:1;stroke:#000000;stroke-width:1.05833;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" id="rect33" width="13.229163" height="5.291667" x="-6.614584" y="-2.6458306" ry="2.5796874"/>
+      <text xml:space="preserve" style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.13293px;line-height:1.3;font-family:Lato;-inkscape-font-specification:'Lato Bold';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:center;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:middle;white-space:normal;display:inline;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.740063;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:stroke fill markers" x="0.0041163671" y="1.0478791" id="text46-7"><tspan id="tspan46-6" style="stroke-width:0.740063" x="0.0041163638" y="1.0478791">Floyd</tspan></text>
+    </g>
+  </g>
+  <g id="labellayer" style="display:inline">
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="68.791664" y="104.77501" id="text106"><tspan x="68.791664" y="104.77501" id="tspan149">West</tspan><tspan x="68.791664" y="110.27834" id="tspan19">Fork</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:10.5466px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#a3a3a3;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="-42.00462" y="37.225056" id="text152"><tspan x="-42.00462" y="37.225056" id="tspan152">Feinstein</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="100.54166" y="75.670837" id="text21"><tspan x="100.54166" y="75.670837" id="tspan21">Outside</tspan><tspan x="100.54166" y="81.174164" id="tspan39">of Shack</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="134.9375" y="46.566669" id="text23"><tspan x="134.9375" y="46.566669" id="tspan23">Trail</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="169.33333" y="75.670837" id="text25"><tspan x="169.33333" y="75.670837" id="tspan25">Trail</tspan><tspan x="169.33333" y="81.174164" id="tspan42">Head</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="201.08333" y="104.77501" id="text27"><tspan x="201.08333" y="104.77501" id="tspan26">East</tspan><tspan x="201.08333" y="110.27834" id="tspan27">Fork</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="177.27083" y="125.94167" id="text29"><tspan x="177.27083" y="125.94167" id="tspan29">Village</tspan><tspan x="177.27083" y="131.44501" id="tspan36">Outskirts</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="158.75" y="144.46252" id="text31"><tspan x="158.75" y="144.46252" id="tspan31">Deserted</tspan><tspan x="158.75" y="149.96585" id="tspan37">Village</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="134.9375" y="167.74583" id="text33"><tspan x="134.9375" y="167.74583" id="tspan33">Loop</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="100.54166" y="133.87918" id="text35"><tspan x="100.54166" y="133.87918" id="tspan35">Dusty</tspan><tspan x="100.54166" y="139.38251" id="tspan38">Trail</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="97.895828" y="51.858334" id="text41"><tspan x="97.895828" y="51.858334" id="tspan40">Inside</tspan><tspan x="97.895828" y="57.361664" id="tspan41">Shack</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="161.39583" y="170.39166" id="text43"><tspan x="161.39583" y="170.39166" id="tspan43">Hovel</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="31.749998" y="104.77501" id="text45"><tspan x="31.749998" y="104.77501" id="tspan45">Long</tspan><tspan x="31.749998" y="110.27834" id="tspan55">Road</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="134.9375" y="99.48333" id="text47"><tspan x="134.9375" y="99.48333" id="tspan47">Lonely</tspan><tspan x="134.9375" y="104.98666" id="tspan53">Mountain</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="148.16666" y="123.29583" id="text49"><tspan x="148.16666" y="123.29583" id="tspan49">Mountain</tspan><tspan x="148.16666" y="128.79916" id="tspan54">Trail</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="198.43748" y="51.858334" id="text51"><tspan x="198.43748" y="51.858334" id="tspan51">Shady</tspan><tspan x="198.43748" y="57.361664" id="tspan52">Brook</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="240.77083" y="104.77501" id="text57"><tspan x="240.77083" y="104.77501" id="tspan57">Western</tspan><tspan x="240.77083" y="110.27834" id="tspan61">Road</tspan></text>
+    <text xml:space="preserve" style="font-style:normal;font-weight:bold;font-size:4.23333px;line-height:1.3;font-family:Lato;text-align:center;writing-mode:lr-tb;direction:ltr;text-anchor:middle;white-space:normal;display:inline;fill:#000000;fill-opacity:1;stroke:none;marker-end:url(#marker46)" x="277.8125" y="104.77501" id="text59"><tspan x="277.8125" y="104.77501" id="tspan59">Outside</tspan><tspan x="277.8125" y="110.27834" id="tspan60">Gate</tspan></text>
+  </g>
+</svg>
