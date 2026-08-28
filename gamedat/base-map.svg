@@ -25,14 +25,14 @@
      inkscape:document-units="px"
      showgrid="true"
      inkscape:zoom="1"
-     inkscape:cx="1291"
-     inkscape:cy="358"
+     inkscape:cx="1213"
+     inkscape:cy="402"
      inkscape:window-width="2240"
      inkscape:window-height="1220"
      inkscape:window-x="137"
      inkscape:window-y="6"
      inkscape:window-maximized="0"
-     inkscape:current-layer="connlayer"
+     inkscape:current-layer="roomlayer"
      showguides="false">
     <inkscape:grid
        id="grid1"
@@ -155,7 +155,8 @@
      inkscape:groupmode="layer"
      id="connlayer"
      inkscape:label="Connections"
-     style="display:inline">
+     style="display:inline"
+     sodipodi:insensitive="true">
     <path
        style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:stroke fill markers;stop-color:#000000;stop-opacity:1"
        d="M 161.39583,161.39584 V 149.48959"
@@ -212,7 +213,7 @@
        id="path31" />
     <path
        style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:stroke fill markers"
-       d="m 312.20833,105.83334 161.39582,0"
+       d="M 312.20833,105.83334 H 473.60415"
        id="path32"
        sodipodi:nodetypes="cc" />
     <path
@@ -419,7 +420,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect1"
+       id="r-inside-gate"
        width="21.166666"
        height="15.875001"
        x="293.6875"
@@ -427,7 +428,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect2"
+       id="r-pebbled-path"
        width="21.166666"
        height="15.875001"
        x="293.68747"
@@ -435,7 +436,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect3"
+       id="r-nw-tower"
        width="21.166666"
        height="15.875001"
        x="293.68747"
@@ -443,7 +444,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect4"
+       id="r-west-hall"
        width="21.166666"
        height="15.875001"
        x="293.6875"
@@ -451,7 +452,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect5"
+       id="r-sw-tower"
        width="21.166666"
        height="15.875001"
        x="293.6875"
@@ -459,7 +460,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect6"
+       id="r-junction"
        width="21.166666"
        height="15.875001"
        x="468.3125"
@@ -467,7 +468,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect7"
+       id="r-library"
        width="21.166666"
        height="15.875001"
        x="468.31247"
@@ -475,7 +476,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect8"
+       id="r-north-gate"
        width="21.166666"
        height="15.875001"
        x="468.31247"
@@ -483,7 +484,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect9"
+       id="r-banquet-hall"
        width="21.166666"
        height="15.875001"
        x="468.3125"
@@ -491,7 +492,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect10"
+       id="r-south-gate"
        width="21.166666"
        height="15.875001"
        x="468.3125"
@@ -499,7 +500,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect11"
+       id="r-east-hall"
        width="21.166666"
        height="15.875001"
        x="468.3125"
@@ -507,7 +508,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect12"
+       id="r-mirror-hall-1"
        width="21.166666"
        height="15.875001"
        x="328.08331"
@@ -515,7 +516,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect13"
+       id="r-mirror-hall-2"
        width="21.166666"
        height="15.875001"
        x="359.83331"
@@ -523,7 +524,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect14"
+       id="r-mirror-hall-3"
        width="21.166666"
        height="15.875001"
        x="391.58331"
@@ -531,7 +532,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect15"
+       id="r-mirror-hall-4"
        width="21.166666"
        height="15.875001"
        x="423.33331"
@@ -539,7 +540,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect16"
+       id="r-dim-descent"
        width="21.166666"
        height="15.875001"
        x="330.72916"
@@ -547,7 +548,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect17"
+       id="r-gallery"
        width="21.166666"
        height="15.875001"
        x="399.52081"
@@ -555,7 +556,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect19"
+       id="r-courtyard-1"
        width="21.166666"
        height="15.875001"
        x="330.72916"
@@ -563,7 +564,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect20"
+       id="r-knot-room"
        width="21.166666"
        height="15.875001"
        x="330.72916"
@@ -571,7 +572,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect21"
+       id="r-courtyard-3"
        width="21.166666"
        height="15.875001"
        x="365.125"
@@ -579,7 +580,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect22"
+       id="r-courtyard-4"
        width="21.166666"
        height="15.875001"
        x="365.125"
@@ -587,7 +588,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect23"
+       id="r-courtyard-2"
        width="21.166666"
        height="15.875001"
        x="365.12497"
@@ -595,7 +596,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect24"
+       id="r-temple"
        width="26.458336"
        height="15.875003"
        x="399.52081"
@@ -603,7 +604,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect25"
+       id="r-courtyard-5"
        width="21.166666"
        height="15.875001"
        x="399.52078"
@@ -611,7 +612,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect26"
+       id="r-courtyard-6"
        width="21.166666"
        height="15.875001"
        x="399.52081"
@@ -619,7 +620,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect27"
+       id="r-tower-s"
        width="15.875008"
        height="10.583343"
        x="404.81247"
@@ -627,7 +628,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect28"
+       id="r-tower-n"
        width="15.875008"
        height="10.583343"
        x="404.81247"
@@ -635,7 +636,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect29"
+       id="r-courtyard-7"
        width="21.166666"
        height="15.875001"
        x="439.20834"
@@ -643,7 +644,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect30"
+       id="r-altar"
        width="21.166666"
        height="15.875001"
        x="428.625"
