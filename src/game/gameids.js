@@ -32,6 +32,7 @@ function gamedat_ids_specific(gamedat_ids)
     gamedat_ids.PLAYER = gamedat_object_names.get('PLAYER').onum;
     gamedat_ids.ADVENTURER = gamedat_object_names.get('ADVENTURER').onum;
     gamedat_ids.TURTLE = gamedat_object_names.get('TURTLE').onum;
+    gamedat_ids.GANG_OF_FOUR = gamedat_object_names.get('GANG-OF-FOUR').onum;
     gamedat_ids.STARTROOM = gamedat_object_names.get('WEST-FORK').onum;
     gamedat_ids.PSEUDO_OBJECT = gamedat_object_names.get('PSEUDO-OBJECT').onum;
 

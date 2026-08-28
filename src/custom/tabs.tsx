@@ -35,6 +35,7 @@ export function TabbedPane()
     const mobiles = [
         gamedat_ids.ADVENTURER,
         gamedat_ids.TURTLE,
+        gamedat_ids.GANG_OF_FOUR,
     ];
 
     let ells = tab_list.map(([key, label]) => {
