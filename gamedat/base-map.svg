@@ -26,11 +26,11 @@
      inkscape:document-units="px"
      showgrid="true"
      inkscape:zoom="1"
-     inkscape:cx="1392.5"
+     inkscape:cx="1386.5"
      inkscape:cy="728"
      inkscape:window-width="2240"
      inkscape:window-height="1220"
-     inkscape:window-x="129"
+     inkscape:window-x="128"
      inkscape:window-y="41"
      inkscape:window-maximized="0"
      inkscape:current-layer="roomlayer"
@@ -870,7 +870,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect189"
+       id="r-t-a"
        width="10.583317"
        height="10.583331"
        x="373.0625"
@@ -878,7 +878,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect190"
+       id="r-t-c"
        width="10.583317"
        height="10.583331"
        x="388.9375"
@@ -886,7 +886,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect191"
+       id="r-t-e"
        width="10.583317"
        height="10.583331"
        x="404.8125"
@@ -894,7 +894,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect192"
+       id="r-t-g"
        width="10.583317"
        height="10.583331"
        x="420.6875"
@@ -902,7 +902,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect193"
+       id="r-t-h"
        width="10.583317"
        height="10.583331"
        x="436.5625"
@@ -910,7 +910,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect194"
+       id="r-t-f"
        width="10.583317"
        height="10.583331"
        x="404.8125"
@@ -918,7 +918,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect195"
+       id="r-t-b"
        width="10.583317"
        height="10.583331"
        x="373.0625"
@@ -926,7 +926,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect196"
+       id="r-t-d"
        width="10.583317"
        height="10.583331"
        x="388.9375"
@@ -934,7 +934,7 @@
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
     <rect
-       id="rect197"
+       id="r-t-i"
        width="10.583317"
        height="10.583331"
        x="420.6875"
