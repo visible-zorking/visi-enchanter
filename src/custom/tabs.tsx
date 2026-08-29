@@ -36,6 +36,7 @@ export function TabbedPane()
     const mobiles = [
         gamedat_ids.ADVENTURER,
         gamedat_ids.TURTLE,
+        gamedat_ids.TERROR,
         gamedat_ids.GANG_OF_FOUR,
     ];
 
