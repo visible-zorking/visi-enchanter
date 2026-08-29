@@ -26,14 +26,14 @@
      inkscape:document-units="px"
      showgrid="true"
      inkscape:zoom="1"
-     inkscape:cx="2103.5"
-     inkscape:cy="388"
+     inkscape:cx="1981.5"
+     inkscape:cy="542"
      inkscape:window-width="2240"
      inkscape:window-height="1220"
      inkscape:window-x="128"
      inkscape:window-y="13"
      inkscape:window-maximized="0"
-     inkscape:current-layer="roomlayer"
+     inkscape:current-layer="connlayer"
      showguides="false">
     <inkscape:grid
        id="grid1"
@@ -523,10 +523,27 @@
        id="path10"
        sodipodi:nodetypes="cc" />
     <path
-       style="font-variation-settings:normal;display:inline;fill:none;fill-opacity:1;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.05833, 1.05833;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#ArrowWideHeavy);marker-end:url(#ArrowWideHeavy-2);paint-order:stroke fill markers;stop-color:#000000"
-       d="M 539.74998,121.70834 V 89.958338"
-       id="path64-1"
-       sodipodi:nodetypes="cc" />
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:stroke fill markers"
+       d="m 580.76039,105.83334 h 18.52084"
+       id="path16" />
+    <path
+       style="fill:none;stroke:#4d4d4d;stroke-width:1.05833;stroke-linejoin:round;stroke-dasharray:none;-inkscape-stroke:none;paint-order:stroke fill markers;font-variation-settings:normal;opacity:1;vector-effect:none;fill-opacity:1;stroke-linecap:butt;stroke-miterlimit:4;stroke-dashoffset:0;stroke-opacity:1;stop-color:#000000;stop-opacity:1"
+       d="m 579.43747,111.12501 v 7.9375 l 5.29166,-2.64584 v 7.9375"
+       id="path17" />
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.05833, 1.05833;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:stroke fill markers;marker-end:;stop-color:#000000;stop-opacity:1"
+       d="M 547.68747,105.83334 H 566.2083"
+       id="path20" />
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.05833, 1.05833;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-start:url(#ArrowWideHeavy);marker-end:url(#ArrowWideHeavy-2);paint-order:stroke fill markers"
+       d="m 537.10414,87.312503 v 7.937501 l 2.64584,-2.645833 -1e-5,26.458329 2.64584,-2.64583 v 7.9375"
+       id="path47"
+       sodipodi:nodetypes="cccccc" />
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.05833, 1.05833;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-start:url(#ArrowWideHeavy);marker-end:url(#ArrowWideHeavy-2);paint-order:stroke fill markers"
+       d="m 590.02081,132.29167 -10e-6,10.58333 2.64584,-2.64583 v 7.9375"
+       id="path48"
+       sodipodi:nodetypes="cccc" />
   </g>
   <g
      inkscape:label="Rooms"
@@ -1098,6 +1115,30 @@
        width="21.166666"
        height="15.875001"
        x="529.16663"
+       y="97.895836"
+       ry="2.6458292"
+       style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
+    <rect
+       id="r-real-stair"
+       width="21.166666"
+       height="15.875001"
+       x="563.56244"
+       y="97.895836"
+       ry="2.6458292"
+       style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
+    <rect
+       id="r-pit"
+       width="21.166666"
+       height="15.875001"
+       x="579.43744"
+       y="121.70834"
+       ry="2.6458292"
+       style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
+    <rect
+       id="r-warlock-tower"
+       width="21.166666"
+       height="15.875001"
+       x="592.66663"
        y="97.895836"
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
@@ -2279,5 +2320,53 @@
          x="539.75"
          y="110.27834"
          id="tspan14">Stair</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:1.3;font-family:Lato;-inkscape-font-specification:'Lato Bold';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:center;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:middle;white-space:normal;display:inline;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-end:url(#marker46);paint-order:stroke fill markers"
+       x="574.14581"
+       y="104.77501"
+       id="text22"><tspan
+         sodipodi:role="line"
+         style="stroke-width:1"
+         x="574.14581"
+         y="104.77501"
+         id="tspan20">Winding</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:1"
+         x="574.14581"
+         y="110.27834"
+         id="tspan22">Stair</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:1.3;font-family:Lato;-inkscape-font-specification:'Lato Bold';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:center;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:middle;white-space:normal;display:inline;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-end:url(#marker46);paint-order:stroke fill markers"
+       x="603.25"
+       y="104.77501"
+       id="text28"><tspan
+         sodipodi:role="line"
+         style="stroke-width:1"
+         x="603.25"
+         y="104.77501"
+         id="tspan28">Warlock’s</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:1"
+         x="603.25"
+         y="110.27834"
+         id="tspan30">Tower</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.71732px;line-height:1.3;font-family:Lato;-inkscape-font-specification:'Lato Bold';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:center;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:middle;white-space:normal;display:inline;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.878108;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-end:url(#marker46);paint-order:stroke fill markers"
+       x="590.03333"
+       y="128.73329"
+       id="text34"><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.878108"
+         x="590.03333"
+         y="128.73329"
+         id="tspan34">Bottomless</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:0.878108"
+         x="590.03333"
+         y="133.56581"
+         id="tspan44">Pit</tspan></text>
   </g>
 </svg>
