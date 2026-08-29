@@ -57,7 +57,7 @@
 #mobilelayer g.Offstage { display:none; }
 #connlayer .Invisible { display:none; }
 #connlayer .Drawn { fill:none; stroke:#4D4D4D; stroke-width:1.05833; stroke-linecap:butt; }
-#connlayer .Erased { fill:none; stroke:#CDCDCD; stroke-width:1.05833; stroke-linecap:butt; stroke-dasharray:1.05833,1.05833; }
+#connlayer .Erased { fill:none; stroke:#DDDDDD; stroke-width:1.05833; stroke-linecap:butt; stroke-dasharray:1.05833,1.05833; }
 </style>
   <defs
      id="defs1">
