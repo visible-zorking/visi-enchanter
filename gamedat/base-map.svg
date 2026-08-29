@@ -26,14 +26,14 @@
      inkscape:document-units="px"
      showgrid="true"
      inkscape:zoom="1"
-     inkscape:cx="545.5"
-     inkscape:cy="454"
+     inkscape:cx="2103.5"
+     inkscape:cy="388"
      inkscape:window-width="2240"
      inkscape:window-height="1220"
      inkscape:window-x="128"
      inkscape:window-y="13"
      inkscape:window-maximized="0"
-     inkscape:current-layer="labellayer"
+     inkscape:current-layer="roomlayer"
      showguides="false">
     <inkscape:grid
        id="grid1"
@@ -61,6 +61,24 @@
 </style>
   <defs
      id="defs1">
+    <marker
+       style="overflow:visible"
+       id="ArrowWideHeavy"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide, heavy arrow"
+       markerWidth="0.5"
+       markerHeight="0.5"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="m 1,0 -3,3 h -2 l 3,-3 -3,-3 h 2 z"
+         id="path3" />
+    </marker>
     <linearGradient
        id="linearGradient131"
        inkscape:collect="always">
@@ -133,6 +151,24 @@
        x2="7.1437442"
        y2="2.8610229e-06"
        gradientUnits="userSpaceOnUse" />
+    <marker
+       style="overflow:visible"
+       id="ArrowWideHeavy-2"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide, heavy arrow"
+       markerWidth="0.5"
+       markerHeight="0.5"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="m 1,0 -3,3 h -2 l 3,-3 -3,-3 h 2 z"
+         id="path3-1" />
+    </marker>
   </defs>
   <g
      inkscape:groupmode="layer"
@@ -231,7 +267,7 @@
        id="path63"
        sodipodi:nodetypes="cc" />
     <path
-       style="font-variation-settings:normal;opacity:1;fill:none;fill-opacity:1;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.05833, 1.05833;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers;stop-color:#000000;stop-opacity:1"
+       style="font-variation-settings:normal;opacity:1;fill:none;fill-opacity:1;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.05833, 1.05833;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke fill markers;stop-color:#000000;stop-opacity:1;marker-end:url(#ArrowWideHeavy)"
        d="M 37.041665,105.83334 H 10.583333"
        id="path64"
        sodipodi:nodetypes="cc" />
@@ -481,13 +517,22 @@
        d="m 396.87498,293.68752 10.58333,-10.58334"
        id="tmaze-m-h"
        sodipodi:nodetypes="cc" />
+    <path
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;paint-order:stroke fill markers"
+       d="m 485.51039,105.83334 46.30209,0"
+       id="path10"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="font-variation-settings:normal;display:inline;fill:none;fill-opacity:1;stroke:#4d4d4d;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.05833, 1.05833;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#ArrowWideHeavy);marker-end:url(#ArrowWideHeavy-2);paint-order:stroke fill markers;stop-color:#000000"
+       d="M 539.74998,121.70834 V 89.958338"
+       id="path64-1"
+       sodipodi:nodetypes="cc" />
   </g>
   <g
      inkscape:label="Rooms"
      inkscape:groupmode="layer"
      id="roomlayer"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <rect
        id="r-long-road"
        width="21.166666"
@@ -1040,6 +1085,22 @@
        y="291.04169"
        ry="2.6458292"
        style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
+    <rect
+       id="r-landing"
+       width="21.166666"
+       height="15.875001"
+       x="500.0625"
+       y="97.895836"
+       ry="2.6458292"
+       style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
+    <rect
+       id="r-endless-stair"
+       width="21.166666"
+       height="15.875001"
+       x="529.16663"
+       y="97.895836"
+       ry="2.6458292"
+       style="display:inline;fill:#f8f0e8;stroke:#000000;stroke-width:0.7" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -1066,7 +1127,8 @@
   <g
      inkscape:groupmode="layer"
      id="mobilelayer"
-     inkscape:label="Mobiles">
+     inkscape:label="Mobiles"
+     sodipodi:insensitive="true">
     <g
        id="mob-turtle"
        transform="translate(15.875,15.874998)">
@@ -2190,5 +2252,32 @@
          x="441.83994"
          y="282.31042"
          id="tspan9">F</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:1.3;font-family:Lato;-inkscape-font-specification:'Lato Bold';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:center;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:middle;white-space:normal;display:inline;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-end:url(#marker46);paint-order:stroke fill markers"
+       x="510.64581"
+       y="106.89169"
+       id="text11"><tspan
+         sodipodi:role="line"
+         style="stroke-width:1"
+         x="510.64581"
+         y="106.89169"
+         id="tspan11">Landing</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333px;line-height:1.3;font-family:Lato;-inkscape-font-specification:'Lato Bold';font-variant-ligatures:normal;font-variant-position:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-alternates:normal;font-variant-east-asian:normal;font-feature-settings:normal;font-variation-settings:normal;text-indent:0;text-align:center;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000000;letter-spacing:normal;word-spacing:normal;text-transform:none;writing-mode:lr-tb;direction:ltr;text-orientation:mixed;dominant-baseline:auto;baseline-shift:baseline;text-anchor:middle;white-space:normal;display:inline;vector-effect:none;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;marker-end:url(#marker46);paint-order:stroke fill markers"
+       x="539.75"
+       y="104.77501"
+       id="text13"><tspan
+         sodipodi:role="line"
+         style="stroke-width:1"
+         x="539.75"
+         y="104.77501"
+         id="tspan13">Winding</tspan><tspan
+         sodipodi:role="line"
+         style="stroke-width:1"
+         x="539.75"
+         y="110.27834"
+         id="tspan14">Stair</tspan></text>
   </g>
 </svg>
