@@ -1,6 +1,7 @@
 import { unpack_address } from '../visi/gametypes';
-import { GnustoEngine, ZState } from '../visi/zstate';
+import { GnustoEngine, ZState, ZStatePlus } from '../visi/zstate';
 import { gamedat_routine_names, gamedat_global_names, gamedat_string_map } from '../visi/gamedat';
+import { ExtraToggle } from '../visi/map';
 
 // Translucent rooms A-I.
 export const tmaze_rooms = [ 240, 174, 119, 56, 231, 163, 104, 34, 216 ];
@@ -24,6 +25,14 @@ export function get_specifics(engine: GnustoEngine, state: ZState): SpecificEnch
     return { tmaze };
 }
 
+export function map_adjustments(zstate: ZStatePlus): ExtraToggle[]
+{
+    let tmaze = zstate.specifics.tmaze;
+    
+    return [
+        { id:'tmaze-b-r', class:(tmaze[0][7] ? 'Drawn' : 'Erased') },
+    ];
+}
 
 export function show_commentary_hook(topic: string, engine: GnustoEngine): string|null
 {

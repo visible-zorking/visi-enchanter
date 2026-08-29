@@ -13,6 +13,7 @@ import { ObjectAttrList, ObjectPropList } from '../visi/objlist';
 import { ObjectPage } from '../visi/objpage';
 import { GlobalState } from '../visi/globstate';
 import { SourceFileList } from '../visi/filelist';
+import { map_adjustments } from './modgame';
 import { AboutPage } from './about';
 import { FeeliesPage } from './feelies';
 
@@ -75,7 +76,7 @@ export function TabbedPane()
         tabcontent = <CallActivity />;
         break;
     case 'map':
-        tabcontent = <GameMap mobiles={ mobiles } />;
+        tabcontent = <GameMap mobiles={ mobiles } extras={ map_adjustments } />;
         break;
     case 'globals':
         tabcontent = <GlobalState />;
