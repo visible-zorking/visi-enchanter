@@ -15,6 +15,12 @@ src:VERBS-301: The source code says “registered trademark”, but the compiled
 
 src:VERBS-810: The source code says “registered trademark”, but the compiled game file prints only “trademark”. The source must have been edited after the game was last compiled.
 
+src:MAIN-52: I really have no idea if you’re meant to think of malevolent [brine shrimp|https://en.wikipedia.org/wiki/Krill] at this point.
+
+src:MAIN-55: “Krill” may be intended to be serious, but “Belboz” is at least a little bit silly.
+	The name comes from the same syllable bucket as “foo”, “bar”, “Frobozz”, “Borphee”, and the eight [reset buttons|relative:../suspended/#OBJ:CIRCLE1] in *Suspended*.
+
+
 GRAMMAR-LEGEND: This is the list of verb forms which the game recognizes. (Simple directions like `NORTH` are a special case; they’re not listed here.) These are compiled from the [SYNTAX|~src:SYNTAX-69] file.
 	Objects in a verb line have various flags which give hints about their usage. An object attribute (like `LIGHTBIT`) means that if the player doesn’t name an object, the parser will try to guess one with that attribute.
 	The other flag letters have specific meanings: **m**ultiple objects are accepted; the player must **h**ave the object; the player will automatically **t**ake the object; the object should be **i**n the room or **o**n the ground; the object should be **p**ossessed or **c**arried in a container. (Yes, they’re confusing. Infocom’s own docs say “No one really understands them except Stu” (Galley).)
@@ -174,7 +180,6 @@ rtn:V-GROSS-OUT: The command `GROSS OUT` is not implemented in any other Infocom
 
 ### purple shift?
 ### Necromancer
-### NIGHTFALL starts real late (TIME-TABLE)
 
 ### [SCENIC-VIEW|relative:../zork3/#RTN:ZORK-IV-F]
 
