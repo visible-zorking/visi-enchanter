@@ -34766,6 +34766,7 @@ var bundle = (function (exports) {
   const gamedat_actions = winany.gamedat_actions;
   const gamedat_sourcefiles = winany.gamedat_sourcefiles;
   const gamedat_distances = winany.gamedat_distances;
+  const gamedat_roominfo_names = winany.gamedat_roominfo_names;
   const gamedat_commentary = winany.gamedat_commentary;
   const gamedat_commentarymap = winany.gamedat_commentarymap;
   let assetdir = 'visiterp';
@@ -34872,6 +34873,28 @@ var bundle = (function (exports) {
   // Translucent rooms A-I.
   const tmaze_rooms = [240, 174, 119, 56, 231, 163, 104, 34, 216];
   const tmaze_props = [11351, 11385, 11419, 11453, 11487, 11521, 11555, 11589, 11623];
+  const tmaze_connections = [
+      { id: 'tmaze-b-r', room: 0, dir: 7 }, // A south
+      { id: 'tmaze-j-m', room: 4, dir: 7 }, // E
+      { id: 'tmaze-k-h', room: 2, dir: 7 }, // C
+      { id: 'tmaze-v-p', room: 6, dir: 7 }, // G
+      { id: 'tmaze-b-j', room: 0, dir: 11 }, // A
+      { id: 'tmaze-r-m', room: 1, dir: 11 }, // B
+      { id: 'tmaze-k-v', room: 2, dir: 11 }, // C
+      { id: 'tmaze-h-p', room: 3, dir: 11 }, // D
+      { id: 'tmaze-m-f', room: 5, dir: 11 }, // F
+      { id: 'tmaze-b-k', room: 0, dir: 9 }, // A
+      { id: 'tmaze-k-m', room: 2, dir: 9 }, // C
+      { id: 'tmaze-m-p', room: 5, dir: 9 }, // F
+      { id: 'tmaze-v-f', room: 6, dir: 9 }, // G
+      { id: 'tmaze-j-v', room: 4, dir: 9 }, // E
+      { id: 'tmaze-r-h', room: 1, dir: 9 }, // B
+      { id: 'tmaze-f-p', room: 7, dir: 5 }, // H
+      { id: 'tmaze-v-m', room: 6, dir: 5 }, // G
+      { id: 'tmaze-j-k', room: 4, dir: 5 }, // E
+      { id: 'tmaze-k-r', room: 2, dir: 5 }, // C
+      { id: 'tmaze-m-h', room: 5, dir: 5 }, // F
+  ];
   function get_specifics(engine, state) {
       let tmaze = [];
       for (let addr of tmaze_props) {
@@ -34881,6 +34904,14 @@ var bundle = (function (exports) {
           tmaze.push(ls);
       }
       return { tmaze };
+  }
+  function map_adjustments(zstate) {
+      let tmaze = zstate.specifics.tmaze;
+      let ls = tmaze_connections.map((obj) => ({
+          id: obj.id,
+          class: (tmaze[obj.room][obj.dir] ? 'Drawn' : 'Erased'),
+      }));
+      return ls;
   }
   function show_commentary_hook(topic, engine) {
       return null;
@@ -35536,7 +35567,7 @@ var bundle = (function (exports) {
       const [resultList, setResultList] = reactExports.useState([]);
       const [resultHasMore, setResultHasMore] = reactExports.useState(false);
       reactExports.useContext(ReactCtx);
-      let resultref = useRefDiv$2();
+      let resultref = useRefDiv$3();
       let index = 0;
       let ells = resultList.map((result) => {
           return (jsxRuntimeExports.jsx(OneSearchResult, { result: result }, index++));
@@ -35604,10 +35635,10 @@ var bundle = (function (exports) {
                       jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [jsxRuntimeExports.jsx("span", { className: "SearchResultType", children: result.idtype }), jsxRuntimeExports.jsx("code", { children: spanel })] }) }) }));
   }
   const useRefInput = () => reactExports.useRef(null);
-  const useRefDiv$2 = () => reactExports.useRef(null);
+  const useRefDiv$3 = () => reactExports.useRef(null);
 
   function SourceView() {
-      let noderef = useRefDiv$1();
+      let noderef = useRefDiv$2();
       let rctx = reactExports.useContext(ReactCtx);
       let zstate = rctx.zstate;
       let rock = { callback: null };
@@ -35870,7 +35901,7 @@ var bundle = (function (exports) {
           scrollel.scrollTop = linel.offsetTop - Math.floor(scrollel.offsetHeight * heightratio);
       }
   }
-  const useRefDiv$1 = () => reactExports.useRef(null);
+  const useRefDiv$2 = () => reactExports.useRef(null);
 
   /* The "(i)" button which displays an object detail page.
   */
@@ -36133,7 +36164,7 @@ var bundle = (function (exports) {
       return '';
   }
   function sorter_for_key(key, zstate) {
-      let originobj = gamedat_ids.PLAYER;
+      let originobj = (key ? key : gamedat_ids.PLAYER);
       return function (roots, map) {
           let advroom = originobj;
           while (true) {
@@ -36158,7 +36189,14 @@ var bundle = (function (exports) {
       };
   }
   function ObjListSorter({ followKey, setFollowKey }) {
-      return (jsxRuntimeExports.jsx("div", { children: "(Following Player)" }));
+      let follow = (followKey == 0) ? 'player' : 'adventurer';
+      function evhan_follow_change(val) {
+          if (val == 'player')
+              setFollowKey(0);
+          else if (val == 'adventurer')
+              setFollowKey(gamedat_ids.ADVENTURER);
+      }
+      return (jsxRuntimeExports.jsxs("div", { children: ["Follow", ' ', jsxRuntimeExports.jsx("input", { id: "followplayer_radio", type: "radio", name: "follow", value: "player", checked: follow == 'player', onChange: (ev) => evhan_follow_change('player') }), jsxRuntimeExports.jsx("label", { htmlFor: "followplayer_radio", children: "Player" }), ' ', jsxRuntimeExports.jsx("input", { id: "followadventurer_radio", type: "radio", name: "follow", value: "adventurer", checked: follow == 'adventurer', onChange: (ev) => evhan_follow_change('adventurer') }), jsxRuntimeExports.jsx("label", { htmlFor: "followadventurer_radio", children: "Adventurer" })] }));
   }
   function global_value_display(tag, value, glo) {
       switch (tag) {
@@ -36632,6 +36670,166 @@ var bundle = (function (exports) {
       return (jsxRuntimeExports.jsxs("li", { className: cla, children: [jsxRuntimeExports.jsxs("div", { className: "GrammarLineAction", children: [prefuncel, " ", funcel] }), jsxRuntimeExports.jsxs("div", { className: "GrammarLineDef", children: [(rctx.shownumbers ? jsxRuntimeExports.jsxs("span", { className: "ShowAddr", children: [verb.num, ":"] }) : null), jsxRuntimeExports.jsx("span", { className: "PrintDictWord", children: verb.words[0] }), ' ', clausels] })] }));
   }
 
+  function GameMap({ filename, mobiles, extras, scrollcenter }) {
+      let scrollref = useRefDiv$1();
+      let mapref = useRefObject();
+      let rctx = reactExports.useContext(ReactCtx);
+      let zstate = rctx.zstate;
+      let dragstart = null;
+      let scrollstart = null;
+      let origdocsize = gamedat_ids.MAP_DOCSIZE;
+      let viewsize = gamedat_ids.MAP_VIEWSIZE;
+      let docsize = { w: 0.8 * origdocsize.w, h: 0.8 * origdocsize.h };
+      function evhan_mousedown(ev) {
+          if (!scrollref.current) {
+              return;
+          }
+          /* Clip the drag area to inside the scrollbar box. (Firefox would
+             allow this handler to snipe scrollbar dragging.) */
+          let offx = ev.nativeEvent.offsetX;
+          let offy = ev.nativeEvent.offsetY;
+          if (offx < 0 || offx >= scrollref.current.clientWidth || offy < 0 || offy >= scrollref.current.clientHeight) {
+              return;
+          }
+          ev.preventDefault();
+          ev.stopPropagation();
+          if (scrollref.current && ev.button == 0) {
+              dragstart = { x: ev.clientX, y: ev.clientY };
+              scrollstart = { x: scrollref.current.scrollLeft, y: scrollref.current.scrollTop };
+              scrollref.current.setPointerCapture(ev.pointerId);
+          }
+      }
+      function evhan_mousemove(ev) {
+          if (scrollref.current && dragstart && scrollstart) {
+              ev.preventDefault();
+              scrollref.current.scrollLeft = scrollstart.x - (ev.clientX - dragstart.x);
+              scrollref.current.scrollTop = scrollstart.y - (ev.clientY - dragstart.y);
+          }
+      }
+      /* This callback is used for *both* the map-load event and the useEffect
+         that depends on zstate. This is because the SVG loads slightly later
+         than the first useEffect invocation.
+
+         It's also invoked when the theme changes, because we have to adjust
+         the SVG theme class.
+      */
+      function select_location() {
+          var _a, _b;
+          if (mapref.current) {
+              let herenum = zstate.globals[0]; // LOCATION
+              let hereobj = gamedat_object_ids.get(herenum);
+              let herestr = '';
+              if (hereobj) {
+                  herestr = hereobj.name;
+              }
+              let herecen = null;
+              if (scrollcenter) {
+                  let res = scrollcenter(zstate, herestr);
+                  if (res && res.room) {
+                      herestr = res.room;
+                  }
+                  if (res && res.pos) {
+                      herecen = res.pos;
+                  }
+              }
+              if (!herecen) {
+                  let roomobj = gamedat_roominfo_names.get(herestr);
+                  if (roomobj) {
+                      herecen = roomobj.center;
+                  }
+              }
+              let mapdoc = mapref.current.contentDocument;
+              if (mapdoc && mapdoc.rootElement) {
+                  let cla = (is_dark_theme() ? 'DarkTheme' : 'LightTheme');
+                  mapdoc.rootElement.classList.value = cla;
+                  let curstr = (_a = mapdoc.rootElement.getAttribute('data-curselect')) !== null && _a !== void 0 ? _a : '';
+                  if (herestr != curstr) {
+                      let el = mapdoc.getElementById('r-' + curstr.toLowerCase());
+                      if (el) {
+                          el.classList.remove('Selected');
+                      }
+                      el = mapdoc.getElementById('r-' + herestr.toLowerCase());
+                      if (el) {
+                          el.classList.add('Selected');
+                          if (scrollref.current && herecen) {
+                              scrollref.current.scrollLeft = herecen.x * docsize.w / viewsize.w - 0.5 * scrollref.current.clientWidth;
+                              scrollref.current.scrollTop = herecen.y * docsize.h / viewsize.h - 0.5 * scrollref.current.clientHeight;
+                          }
+                      }
+                      mapdoc.rootElement.setAttribute('data-curselect', herestr);
+                  }
+                  if (mobiles) {
+                      let mobcounts = {};
+                      for (let mobid of mobiles) {
+                          // We rely on the fact that the zstate reports
+                          // objects in order (1-based).
+                          let zobj = zstate.objects[mobid - 1];
+                          if (!zobj)
+                              continue;
+                          let obj = gamedat_object_ids.get(mobid);
+                          if (!obj)
+                              continue;
+                          let el = mapdoc.getElementById('mob-' + obj.name.toLowerCase());
+                          if (!el)
+                              continue;
+                          let mobcen = null;
+                          let mobloc;
+                          if (zobj.parent) {
+                              mobloc = gamedat_object_ids.get(zobj.parent);
+                              if (mobloc) {
+                                  let throomobj = gamedat_roominfo_names.get(mobloc.name);
+                                  if (throomobj) {
+                                      mobcen = throomobj.bottom;
+                                  }
+                              }
+                          }
+                          if (mobcen && mobloc) {
+                              let mobcount = (_b = mobcounts[mobloc.name]) !== null && _b !== void 0 ? _b : 0;
+                              let posx = mobcen.x + 2 * mobcount;
+                              let posy = mobcen.y + 4 * mobcount;
+                              el.classList.remove('Offstage');
+                              el.setAttribute('transform', 'translate(' + posx + ',' + posy + ')');
+                              mobcounts[mobloc.name] = mobcount + 1;
+                          }
+                          else {
+                              el.classList.add('Offstage');
+                          }
+                      }
+                  }
+                  if (extras) {
+                      let extrals = extras(zstate);
+                      for (let obj of extrals) {
+                          let el = mapdoc.getElementById(obj.id);
+                          if (!el)
+                              continue;
+                          if (obj.class !== undefined)
+                              el.classList.value = obj.class;
+                          if (obj.transform !== undefined)
+                              el.setAttribute('transform', obj.transform);
+                      }
+                  }
+              }
+          }
+      }
+      reactExports.useEffect(() => {
+          select_location();
+          window.addEventListener('map-update', select_location);
+          return () => {
+              window.removeEventListener('map-update', select_location);
+          };
+      }, [zstate, rctx.theme]);
+      function evhan_mouseup(ev) {
+          dragstart = null;
+          scrollstart = null;
+          if (scrollref.current) {
+              scrollref.current.releasePointerCapture(ev.pointerId);
+          }
+      }
+      return (jsxRuntimeExports.jsx("div", { className: "ScrollXYContent", ref: scrollref, onPointerDown: evhan_mousedown, onPointerMove: evhan_mousemove, onPointerUp: evhan_mouseup, children: jsxRuntimeExports.jsx("object", { className: "GameMap", ref: mapref, onLoad: select_location, width: docsize.w, height: docsize.h, type: "image/svg+xml", data: filename || "pic/map.svg" }) }));
+  }
+  const useRefDiv$1 = () => reactExports.useRef(null);
+  const useRefObject = () => reactExports.useRef(null);
+
   function new_context$3() {
       return {
           map: new Map(),
@@ -36653,7 +36851,7 @@ var bundle = (function (exports) {
           if (tup.parent == 0 || tup.parent == gamedat_ids.ROOMS || tup.parent == gamedat_ids.GLOBAL_OBJECTS || tup.onum == gamedat_ids.PSEUDO_OBJECT)
               roots.push(tup);
       }
-      let sorter = sorter_for_key();
+      let sorter = sorter_for_key(followKey);
       sorter(roots, map);
       let rootls = roots.map((o) => jsxRuntimeExports.jsx(ShowObject, { tup: o, parentnum: 0 }, o.onum));
       function evhan_click_background(ev) {
@@ -37449,7 +37647,7 @@ var bundle = (function (exports) {
   function AboutPage() {
       let rctx = reactExports.useContext(ReactCtx);
       let zstate = rctx.zstate;
-      let lastupdate = 'August 23, 2026';
+      let lastupdate = 'August 29, 2026';
       let curroom = '???';
       let firstobj = '';
       let map = new Map();
@@ -37491,7 +37689,7 @@ var bundle = (function (exports) {
       }
       return (jsxRuntimeExports.jsx("div", { className: "ScrollContent", children: jsxRuntimeExports.jsxs("div", { className: "AboutPage", children: [jsxRuntimeExports.jsx("h2", { children: "What\u2019s going on?" }), jsxRuntimeExports.jsxs("p", { children: ["You are playing ", jsxRuntimeExports.jsx("i", { children: "Enchanter" }), ", the classic Infocom text adventure. And you are watching the Z-machine execute the game, live, as you play."] }), jsxRuntimeExports.jsxs("p", { children: ["(In case it\u2019s not obvious: ", jsxRuntimeExports.jsx("em", { children: "SPOILERS" }), " for ", jsxRuntimeExports.jsx("i", { children: "Enchanter" }), ". The source code gives away every secret and solution in the game. The whole point of this project is to demonstrate how Infocom games work!)"] }), jsxRuntimeExports.jsxs("p", { children: ["Type commands in the left pane. (If you\u2019re not familiar with parser games,", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://pr-if.org/doc/play-if-card/', text: 'here\u2019s a quick intro' }), ".) As the game responds, the panes on the right will display the current game state and the code that is executing."] }), jsxRuntimeExports.jsxs("p", { children: ["Look at the", ' ', jsxRuntimeExports.jsx("a", { className: "Internal", href: "#", onClick: (ev) => evhan_click_tab(ev, 'objtree'), children: "World" }), ' ', "tab for a start. This shows every object and room in the game. You, the Player, are in the topmost room:", ' ', jsxRuntimeExports.jsx("code", { children: curroom }), ". Listed with you are the objects you can see.", ' ', (firstobj ?
                               jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: ["(Try typing \u201C", jsxRuntimeExports.jsxs("code", { children: ["EXAMINE ", firstobj] }), "\u201D!) "] })
-                              : null), "Objects you pick up will be listed directly under the ", jsxRuntimeExports.jsx("code", { children: "PLAYER" }), "; they will move with you as part of your inventory."] }), jsxRuntimeExports.jsxs("p", { children: ["The other tabs display other aspects of the Z-machine.", ' ', jsxRuntimeExports.jsx("a", { className: "Internal", href: "#", onClick: (ev) => evhan_click_tab(ev, 'activity'), children: "Activity" }), ' ', "shows the functions called in the most recent turn, and what they printed.", ' ', jsxRuntimeExports.jsx("a", { className: "Internal", href: "#", onClick: (ev) => evhan_click_tab(ev, 'globals'), children: "State" }), ' ', "shows all the game\u2019s global variables.", ' ', jsxRuntimeExports.jsx("a", { className: "Internal", href: "#", onClick: (ev) => evhan_click_tab(ev, 'timers'), children: "Timers" }), ' ', "shows the table of timed events.", ' ', jsxRuntimeExports.jsx("a", { className: "Internal", href: "#", onClick: (ev) => evhan_click_tab(ev, 'grammar'), children: "Grammar" }), ' ', "shows the parse table.", ' ', jsxRuntimeExports.jsx("a", { className: "Internal", href: "#", onClick: (ev) => evhan_click_tab(ev, 'map'), children: "Map" }), ' ', "is what you think."] }), jsxRuntimeExports.jsxs("p", { children: ["Click on any function, object, or variable to see its definition in the source code. Click on an object\u2019s", ' ', jsxRuntimeExports.jsx(ObjPageLink, { onum: gamedat_ids.PLAYER }), " button to see its current state and place in the world. (This will initially match the source code, but may change as you interact with the game.)"] }), jsxRuntimeExports.jsxs("p", { children: [jsxRuntimeExports.jsx(Commentary, { topic: 'ABOUT' }), "Click on the green buttons to see commentary about", ' ', jsxRuntimeExports.jsx("i", { children: "Enchanter" }), "\u2019s implementation. Notes, trivia, whatever came into my head as I was building the Visible Zorker!"] }), jsxRuntimeExports.jsx("h2", { children: "How to cast spells" }), jsxRuntimeExports.jsxs("p", { children: ["The ", jsxRuntimeExports.jsx("a", { className: "Internal", href: "#", onClick: (ev) => evhan_click_tab(ev, 'feelies'), children: "Feelies" }), ' ', "tab is particularly important. ", jsxRuntimeExports.jsx("i", { children: "Enchanter" }), " originally came with a document describing your initial spells and an explanation of how to use magic in your quest. The Feelies tab contains links to these instructions."] }), jsxRuntimeExports.jsx("h2", { children: "About this release" }), jsxRuntimeExports.jsxs("p", { children: [jsxRuntimeExports.jsx("i", { children: "Enchanter" }), " was originally released in 1983. The version you see here dates from 1986. (The serial number \u201C860820\u201D shows the compile date.) As with Zork, it was built using a proprietary system called", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://blog.zarfhome.com/2019/04/what-is-zil-anyway', text: 'ZIL' }), ". (For \u201CZork Implementation Language\u201D.)"] }), jsxRuntimeExports.jsxs("p", { children: ["This 1986 release is the one most commonly seen today, because it was included in the \u201C", jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://archive.org/details/lost-treasures-of-infocom', text: 'Lost Treasures of Infocom' }), "\u201D collection and later collections. I have therefore selected it for this exhibit."] }), jsxRuntimeExports.jsx("h2", { children: "Sources and acknowledgements" }), jsxRuntimeExports.jsxs("p", { children: ["The game\u2019s source code was first", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://github.com/historicalsource/enchanter', text: 'publicly released' }), ' ', "by Jason Scott in April 2019. I then combed through all known versions and posted my", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://eblong.com/infocom/', text: 'Obsessively Complete Infocom Catalog' }), ", which now includes this Visible Zorker exhibition."] }), jsxRuntimeExports.jsxs("p", { children: ["The Visible Zorker is built on a seriously customized version of the", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://github.com/curiousdannii/parchment', text: 'Parchment' }), " Z-machine interpreter by Marnanel Thurman, Atul Varma, and Dannii Willis. You can find this, and the rest of the Visible Zorker machinery, on", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://github.com/visible-zorking/visi-zork3', text: 'Github' }), "."] }), jsxRuntimeExports.jsxs("p", { children: ["I used TXD from the", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://ifarchive.org/indexes/if-archive/infocom/tools/ztools/', text: 'ZTools' }), ' ', "package to analyze the game file. That process was invaluably aided by the", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://ifarchive.org/indexes/if-archive/infocom/tools/reform/', text: 'Infocom analysis work' }), ' ', "done in 2007 by Allen Garvin, Ben Rudiak-Gould, and Ethan Dicks."] }), jsxRuntimeExports.jsx("p", { children: "The fonts used are Courier Prime, Lato, and Libre Baskerville. The header background is copied from Infocom\u2019s Zork hint maps." }), jsxRuntimeExports.jsxs("p", { children: ["Feelie scans courtesy of the", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://infodoc.plover.net/manuals/', text: 'InfoDoc Project' }), ' ', "and my own collection. See also the", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://archive.org/details/Infocom_Enchanter_Apple', text: 'Internet Archive' }), "."] }), jsxRuntimeExports.jsxs("p", { children: [jsxRuntimeExports.jsx("i", { children: "Enchanter" }), " itself was originally written by Dave Lebling and Marc Blank. It is copyright 1983 (etc) by Infocom, then Activision, then renamed to Mediagenic, then Bobby Kotick bought it and renamed it Activision, then Vivendi bought it and merged it with Blizzard, then Microsoft consumed the lot."] }), jsxRuntimeExports.jsxs("p", { children: ["Thus, the ", jsxRuntimeExports.jsx("i", { children: "Enchanter" }), " source code is copyright 2025 by Microsoft. Microsoft has not released this game as open source, but I\u2019m going at it regardless."] }), jsxRuntimeExports.jsxs("p", { children: ["Aside from the above, the Visible Zorker is copyright 2025-2026 by Andrew Plotkin. MIT license;", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://github.com/visible-zorking/visi-enchanter', text: 'Github repo' }), "."] }), jsxRuntimeExports.jsx("h2", { children: "Patreon supporters" }), jsxRuntimeExports.jsxs("ul", { className: "PatreonList", children: [jsxRuntimeExports.jsxs("li", { children: [jsxRuntimeExports.jsx("b", { children: "Fancy contributors:" }), ' ', jsxRuntimeExports.jsx(NameList, { level: "Fancy Contributor" })] }), jsxRuntimeExports.jsxs("li", { children: [jsxRuntimeExports.jsx("b", { children: "Contributors:" }), ' ', jsxRuntimeExports.jsx(NameList, { level: "Contributor" })] }), jsxRuntimeExports.jsxs("li", { className: "Small", children: [jsxRuntimeExports.jsx("b", { children: "Participants:" }), ' ', jsxRuntimeExports.jsx(NameList, { level: "Participant" })] }), jsxRuntimeExports.jsxs("li", { className: "Smaller", children: [jsxRuntimeExports.jsx("b", { children: "Supporters:" }), ' ', jsxRuntimeExports.jsx(NameList, { level: "Supporter" })] })] }), jsxRuntimeExports.jsx("hr", {}), jsxRuntimeExports.jsxs("p", { children: ["Last updated ", jsxRuntimeExports.jsx("b", { children: lastupdate }), ". This exhibit is hosted by the", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://eblong.com/infocom/', text: 'Obsessively Complete Infocom Catalog' }), "."] })] }) }));
+                              : null), "Objects you pick up will be listed directly under the ", jsxRuntimeExports.jsx("code", { children: "PLAYER" }), "; they will move with you as part of your inventory."] }), jsxRuntimeExports.jsxs("p", { children: ["The other tabs display other aspects of the Z-machine.", ' ', jsxRuntimeExports.jsx("a", { className: "Internal", href: "#", onClick: (ev) => evhan_click_tab(ev, 'activity'), children: "Activity" }), ' ', "shows the functions called in the most recent turn, and what they printed.", ' ', jsxRuntimeExports.jsx("a", { className: "Internal", href: "#", onClick: (ev) => evhan_click_tab(ev, 'globals'), children: "State" }), ' ', "shows all the game\u2019s global variables.", ' ', jsxRuntimeExports.jsx("a", { className: "Internal", href: "#", onClick: (ev) => evhan_click_tab(ev, 'timers'), children: "Timers" }), ' ', "shows the table of timed events.", ' ', jsxRuntimeExports.jsx("a", { className: "Internal", href: "#", onClick: (ev) => evhan_click_tab(ev, 'grammar'), children: "Grammar" }), ' ', "shows the parse table.", ' ', jsxRuntimeExports.jsx("a", { className: "Internal", href: "#", onClick: (ev) => evhan_click_tab(ev, 'map'), children: "Map" }), ' ', "is what you think."] }), jsxRuntimeExports.jsxs("p", { children: ["Click on any function, object, or variable to see its definition in the source code. Click on an object\u2019s", ' ', jsxRuntimeExports.jsx(ObjPageLink, { onum: gamedat_ids.PLAYER }), " button to see its current state and place in the world. (This will initially match the source code, but may change as you interact with the game.)"] }), jsxRuntimeExports.jsxs("p", { children: [jsxRuntimeExports.jsx(Commentary, { topic: 'ABOUT' }), "Click on the green buttons to see commentary about", ' ', jsxRuntimeExports.jsx("i", { children: "Enchanter" }), "\u2019s implementation. Notes, trivia, whatever came into my head as I was building the Visible Zorker!"] }), jsxRuntimeExports.jsx("h2", { children: "How to cast spells" }), jsxRuntimeExports.jsxs("p", { children: ["The ", jsxRuntimeExports.jsx("a", { className: "Internal", href: "#", onClick: (ev) => evhan_click_tab(ev, 'feelies'), children: "Feelies" }), ' ', "tab is particularly important. ", jsxRuntimeExports.jsx("i", { children: "Enchanter" }), " originally came with a document describing your initial spells and an explanation of how to use magic in your quest. The Feelies tab contains links to these instructions."] }), jsxRuntimeExports.jsx("h2", { children: "About this release" }), jsxRuntimeExports.jsxs("p", { children: [jsxRuntimeExports.jsx("i", { children: "Enchanter" }), " was originally released in 1983. The version you see here dates from 1986. (The serial number \u201C860820\u201D shows the compile date.) As with Zork, it was built using a proprietary system called", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://blog.zarfhome.com/2019/04/what-is-zil-anyway', text: 'ZIL' }), ". (For \u201CZork Implementation Language\u201D.)"] }), jsxRuntimeExports.jsxs("p", { children: ["This 1986 release is the one most commonly seen today, because it was included in the \u201C", jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://archive.org/details/lost-treasures-of-infocom', text: 'Lost Treasures of Infocom' }), "\u201D collection and later collections. I have therefore selected it for this exhibit."] }), jsxRuntimeExports.jsxs("p", { children: ["For a sneak peek at the game\u2019s earliest design document,", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://github.com/historicalsource/enchanter/blob/master/enchanter.txt', text: 'see here' }), "."] }), jsxRuntimeExports.jsx("h2", { children: "Sources and acknowledgements" }), jsxRuntimeExports.jsxs("p", { children: ["The game\u2019s source code was first", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://github.com/historicalsource/enchanter', text: 'publicly released' }), ' ', "by Jason Scott in April 2019. I then combed through all known versions and posted my", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://eblong.com/infocom/', text: 'Obsessively Complete Infocom Catalog' }), ", which now includes this Visible Zorker exhibition."] }), jsxRuntimeExports.jsxs("p", { children: ["The Visible Zorker is built on a seriously customized version of the", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://github.com/curiousdannii/parchment', text: 'Parchment' }), " Z-machine interpreter by Marnanel Thurman, Atul Varma, and Dannii Willis. You can find this, and the rest of the Visible Zorker machinery, on", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://github.com/visible-zorking/visi-zork3', text: 'Github' }), "."] }), jsxRuntimeExports.jsxs("p", { children: ["I used TXD from the", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://ifarchive.org/indexes/if-archive/infocom/tools/ztools/', text: 'ZTools' }), ' ', "package to analyze the game file. That process was invaluably aided by the", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://ifarchive.org/indexes/if-archive/infocom/tools/reform/', text: 'Infocom analysis work' }), ' ', "done in 2007 by Allen Garvin, Ben Rudiak-Gould, and Ethan Dicks."] }), jsxRuntimeExports.jsx("p", { children: "The fonts used are Courier Prime, Lato, and Libre Baskerville. The header background is copied from Infocom\u2019s Zork hint maps." }), jsxRuntimeExports.jsxs("p", { children: ["Feelie scans courtesy of the", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://infodoc.plover.net/manuals/', text: 'InfoDoc Project' }), ' ', "and my own collection. See also the", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://archive.org/details/Infocom_Enchanter_Apple', text: 'Internet Archive' }), "."] }), jsxRuntimeExports.jsxs("p", { children: [jsxRuntimeExports.jsx("i", { children: "Enchanter" }), " itself was originally written by Dave Lebling and Marc Blank. It is copyright 1983 (etc) by Infocom, then Activision, then renamed to Mediagenic, then Bobby Kotick bought it and renamed it Activision, then Vivendi bought it and merged it with Blizzard, then Microsoft consumed the lot."] }), jsxRuntimeExports.jsxs("p", { children: ["Thus, the ", jsxRuntimeExports.jsx("i", { children: "Enchanter" }), " source code is copyright 2025 by Microsoft. Microsoft has not released this game as open source, but I\u2019m going at it regardless."] }), jsxRuntimeExports.jsxs("p", { children: ["Aside from the above, the Visible Zorker is copyright 2025-2026 by Andrew Plotkin. MIT license;", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://github.com/visible-zorking/visi-enchanter', text: 'Github repo' }), "."] }), jsxRuntimeExports.jsx("h2", { children: "Patreon supporters" }), jsxRuntimeExports.jsxs("ul", { className: "PatreonList", children: [jsxRuntimeExports.jsxs("li", { children: [jsxRuntimeExports.jsx("b", { children: "Fancy contributors:" }), ' ', jsxRuntimeExports.jsx(NameList, { level: "Fancy Contributor" })] }), jsxRuntimeExports.jsxs("li", { children: [jsxRuntimeExports.jsx("b", { children: "Contributors:" }), ' ', jsxRuntimeExports.jsx(NameList, { level: "Contributor" })] }), jsxRuntimeExports.jsxs("li", { className: "Small", children: [jsxRuntimeExports.jsx("b", { children: "Participants:" }), ' ', jsxRuntimeExports.jsx(NameList, { level: "Participant" })] }), jsxRuntimeExports.jsxs("li", { className: "Smaller", children: [jsxRuntimeExports.jsx("b", { children: "Supporters:" }), ' ', jsxRuntimeExports.jsx(NameList, { level: "Supporter" })] })] }), jsxRuntimeExports.jsx("hr", {}), jsxRuntimeExports.jsxs("p", { children: ["Last updated ", jsxRuntimeExports.jsx("b", { children: lastupdate }), ". This exhibit is hosted by the", ' ', jsxRuntimeExports.jsx(ExtWebLink, { url: 'https://eblong.com/infocom/', text: 'Obsessively Complete Infocom Catalog' }), "."] })] }) }));
   }
   function ExtWebLink({ url, text }) {
       return (jsxRuntimeExports.jsx("a", { className: "External", target: "_blank", href: url, children: text }));
@@ -37521,7 +37719,7 @@ var bundle = (function (exports) {
   const tab_list = [
       ['activity', 'Activity'],
       ['objtree', 'World'],
-      //[ 'map', 'Map' ],
+      ['map', 'Map'],
       ['globals', 'State'],
       ['timers', 'Timers'],
       ['grammar', 'Grammar'],
@@ -37531,6 +37729,12 @@ var bundle = (function (exports) {
   ];
   function TabbedPane() {
       let rctx = reactExports.useContext(ReactCtx);
+      const mobiles = [
+          gamedat_ids.ADVENTURER,
+          gamedat_ids.TURTLE,
+          gamedat_ids.TERROR,
+          gamedat_ids.GANG_OF_FOUR,
+      ];
       let ells = tab_list.map(([key, label]) => {
           let cla = 'TabItem';
           if (key == rctx.tab)
@@ -37560,11 +37764,9 @@ var bundle = (function (exports) {
           case 'activity':
               tabcontent = jsxRuntimeExports.jsx(CallActivity, {});
               break;
-          /*
           case 'map':
-              tabcontent = <GameMap mobiles={ mobiles } />;
+              tabcontent = jsxRuntimeExports.jsx(GameMap, { mobiles: mobiles, extras: map_adjustments });
               break;
-          */
           case 'globals':
               tabcontent = jsxRuntimeExports.jsx(GlobalState, {});
               break;
