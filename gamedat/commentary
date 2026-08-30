@@ -84,13 +84,13 @@ attr:BURNBIT: Set for objects which the player can `BURN`. (It might be a bad id
 
 attr:FLAMEBIT: Most Infocom games use this to indicate objects which are on fire. However, *Enchanter* does not use `FLAMEBIT`. The [~obj:ETERNAL-FLAME], the only flaming object in the game, is handled as a special case by [~rtn:V-BURN].
 
-
 glob:LOAD-ALLOWED: The maximum weight you can carry. This decreases as you become tired; see [rtn:I-TIRED]. When you rest, it is reset to [glob:LOAD-MAX].
 
 glob:LOAD-MAX: The maximum weight you can carry at full strength. (Compare [glob:LOAD-ALLOWED].)
 
 glob:P-WON: Set if the parser successfully parsed a command. (As opposed to a blank line or an error.)
 	No relation to whether the *player* has won.
+
 
 TIMERS-LEGEND: A list of the timers running (or paused) in the timer table ([~glob:C-TABLE]). Positive numbers count down (while enabled) and call the named function after that many turns. Negative numbers are called every turn while the timer is enabled.
 	This list only grows as you play; timers can be added, started, and stopped, but not removed.
@@ -102,6 +102,28 @@ glob:C-DEMONS: Indicates how much of the timer table is used for daemons.
 
 glob:C-TABLE: The timer table. See the “Timers” tab for a current listing.
 
+rtn:I-TIME: The time-of-day timer. This advances [glob:TOD] every turn.
+	When [glob:TOD] reaches 128 (roughly 24 in-game hours), it’s reset to zero and a new day begins. Krill’s power increases: [glob:LOSSAGE] goes up by one, and [glob:DUSK] and [glob:NIGHTFALL] are brought forward by 20 (about two game hours). The [glob:MUNCHED] and [glob:MOLESTED] probabilities also increase.
+	###
+
+glob:TOD: The time of day. This runs on a scale of dawn (0) to the following dawn (128), at which time it’s reset to zero. (See [rtn:I-TIME].) The game does not deal in clock time, but [glob:TIME-TABLE] gives an idea of how the day runs. Five turns approximate an hour of game time.
+	[glob:DUSK] and [glob:NIGHTFALL] come earlier every day as Krill’s power increases, but the total length of the day does not change.
+
+glob:TIME-TABLE: A table of time descriptions. These follow the [glob:TOD] scale, where dawn is 0 and the following dawn in 128. Each line is 10 [glob:TOD] units, about two hours.
+	The `TIME` command reports these strings. They do *not* take account of the advancing [glob:DUSK] and [glob:NIGHTFALL] as Krill’s power increases.
+
+glob:DUSK: The expected time of sunset, as compared to [glob:TOD]. This starts unrealistically late — about 10 PM if you take the [glob:TIME-TABLE] comments seriously. It decreases by 20 every day (see [rtn:I-TIME]).
+
+glob:NIGHTFALL: The expected time of full night, as compared to [glob:TOD]. This starts unrealistically late — about 1 AM if you take the [glob:TIME-TABLE] comments seriously. This makes for better drama, of course. Since `NIGHTFALL` decreases by 20 every day (see [rtn:I-TIME]), you have five dwindling game days before doom arrives.
+
+glob:LOSSAGE: How much notice Krill has taken of your presence. It increases by 1 every day (see [rtn:I-TIME]). It also increases when you disturb the [~obj:TERROR], and if you foolishly try to `GNUSTO` an uncopiable scroll.
+	The [~obj:GANG-OF-FOUR] will follow you longer as `LOSSAGE` increases. See [rtn:I-GANG].
+
+glob:MOLESTED: The chance of lurking creatures robbing you in your sleep. If this happens, there is also a chance (based on [glob:MUNCHED]) that they will eat you.
+	This increases every day.
+
+glob:MUNCHED: The chance of lurking creatures devouring you in your sleep, once they run across you. (See [glob:MOLESTED]. If they don’t eat you, they will just steal your stuff.)
+	This increases every day.
 
 rtn:I-MUNG-ROOM: A timer which periodically applies ruination ([attr:RMUNGBIT]) to the rooms in [~glob:MUNG-ROOM-TABLE], one by one.
 
@@ -109,7 +131,15 @@ rtn:I-SCURRY: Timer for occasional atmospheric messages.
 
 rtn:I-TIRED: The sleepiness timer. As you get more tired, your weight limit ([~glob:LOAD-ALLOWED]) and spell limit ([~glob:SPELL-MAX]) decrease; your chance of fumbling objects ([~glob:FUMBLE-NUMBER], [~glob:FUMBLE-PROB]) increases. When [glob:AWAKE] reaches 10, you collapse.
 
-glob:AWAKE: How tired you are. -1 means fully awake. The [rtn:I-TIRED] timer increases it periodically; when it reaches 10, you collapse.
+glob:AWAKE: How tired you are. -1 means fully awake. After [const:MOVES-PER-DAY] turns, the [rtn:I-TIRED] timer increases `AWAKE` periodically. When it reaches 10, you collapse.
+
+const:MOVES-PER-DAY: How long you can be awake before you start feeling sleepy. See [rtn:I-TIRED].
+
+const:MOVES-PER-SLEEP: How long you sleep for when you go to sleep. See [~rtn:V-SLEEP].
+
+rtn:I-GUARDS-ARRIVE: Timer for the [~obj:GANG-OF-FOUR] coming your way. This has a 30% chance of starting each turn you are in the [~obj:LIBRARY] or [~obj:BANQUET-HALL]. They will arrive on the next turn ([rtn:I-GANG]).
+
+rtn:I-GANG: Timer for the [~obj:GANG-OF-FOUR] trying to capture you. If you stand still, they will do so (unless you have cast `MELBOR`). Otherwise, they will follow you through any number of ruined rooms (see [rtn:I-MUNG-ROOM]) and up to [glob:LOSSAGE] undespoiled rooms as well.
 
 
 attr:RMUNGBIT: Indicates ruined objects and rooms.
