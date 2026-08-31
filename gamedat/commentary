@@ -180,9 +180,13 @@ attr:VICTIM: This flag is only set for the [~obj:DRAGON], and it’s never used.
 
 src:STAIR-391: The [attr:VICTIM] flag is only set for the [~obj:DRAGON], and it’s never used. It’s almost certainly a typo for [attr:VICBIT].
 
-attr:SCROLLBIT: Set for scrolls, naturally.
+attr:SPELLBIT: Set for spell objects, naturally. (Compare [attr:SCROLLBIT].)
 
-attr:POINTBIT: Set for the nine points on the [~obj:TMAP].
+attr:SCROLLBIT: Set for scrolls, naturally. (Compare [attr:SPELLBIT].)
+
+attr:POINTBIT: Set for the nine point objects on the [~obj:TMAP].
+
+prop:COUNT: For spell objects, tells how many times you have the spell memorized. For rooms, distinguishes the four mirror rooms.
 
 attr:TREASURE: Set for obviously valuable objects. You don’t care, but the [obj:ADVENTURER] does.
 
@@ -193,6 +197,14 @@ glob:FUMBLE-PROB: The chance of failing to take another object, if you have more
 	This starts at eight (per object) but increases as you tire. See [rtn:I-TIRED].
 
 src:VERBS-643: The “holding too many things” message is probabilistic. The more objects you have past [~glob:FUMBLE-NUMBER], the greater the chance ([~glob:FUMBLE-PROB]) of failing to pick up another.
+
+
+glob:REAL-SPELL-MAX: The maximum number of spells you can memorize at once (ignoring `GNUSTO`) when fully rested. This starts at four, but increases by one every time you [sleep|rtn:V-SLEEP]. (Compare [glob:SPELL-MAX].)
+
+glob:SPELL-MAX: The number of spells you can currently keep memorized (ignoring `GNUSTO`). When fully rested, this is the same as [glob:REAL-SPELL-MAX], but it decreases as you tire. (See [rtn:I-TIRED].)
+
+glob:SPELL-ROOM: The number of additional spells you can memorize, beyond the ones you already know.
+	This value is maintained in parallel with [glob:SPELL-MAX] and your spell list. Handling it this way is redundant. It sets my teeth on edge but I’m not aware of any bugs in the logic.
 
 
 ### many comments about the ADVENTURER
