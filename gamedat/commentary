@@ -20,6 +20,9 @@ src:MAIN-52: I really have no idea if you’re meant to think of malevolent [bri
 src:MAIN-55: “Krill” may be intended to be serious, but “Belboz” is at least a little bit silly.
 	The name comes from the same syllable bucket as “foo”, “bar”, “Frobozz”, “Borphee”, and the eight [reset buttons|relative:../suspended/#OBJ:CIRCLE1] in *Suspended*.
 
+obj:BELBOZ: Yes, Belboz is a Necromancer. Apparently Warlocks are disreputable, but Necromancers can be stand-up members of society.
+	To be fair, your talent for fatal blunder gives Belboz’s talents a good workout. See [rtn:JIGS-UP].
+
 
 GRAMMAR-LEGEND: This is the list of verb forms which the game recognizes. (Simple directions like `NORTH` are a special case; they’re not listed here.) These are compiled from the [SYNTAX|~src:SYNTAX-69] file.
 	Objects in a verb line have various flags which give hints about their usage. An object attribute (like `LIGHTBIT`) means that if the player doesn’t name an object, the parser will try to guess one with that attribute.
@@ -159,7 +162,9 @@ attr:VILLAIN: Generally set for living beings, although they may or may not be v
 attr:VICBIT: Generally set for living beings, though not the [~obj:PLAYER]. The [~obj:MAGIC-ROPE] and the [~obj:MIRROR] have it as well.
 	This is almost the same as [~attr:VILLAIN], but some verbs use [~attr:VILLAIN] and some `VICBIT`, with no obvious pattern.
 
-ATTR:VICTIM: This flag is only set for the [~obj:DRAGON], and it’s never used. It’s almost certainly a typo for [attr:VICBIT].
+attr:VICTIM: This flag is only set for the [~obj:DRAGON], and it’s never used. It’s almost certainly a typo for [attr:VICBIT].
+
+src:STAIR-391: The [attr:VICTIM] flag is only set for the [~obj:DRAGON], and it’s never used. It’s almost certainly a typo for [attr:VICBIT].
 
 attr:SCROLLBIT: Set for scrolls, naturally.
 
