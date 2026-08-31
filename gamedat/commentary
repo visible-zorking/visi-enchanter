@@ -15,7 +15,8 @@ src:VERBS-301: The source code says “registered trademark”, but the compiled
 
 src:VERBS-810: The source code says “registered trademark”, but the compiled game file prints only “trademark”. The source must have been edited after the game was last compiled.
 
-src:MAIN-52: I really have no idea if you’re meant to think of malevolent [brine shrimp|https://en.wikipedia.org/wiki/Krill] at this point.
+src:MAIN-52: The [original design document|https://github.com/historicalsource/enchanter/blob/master/enchanter.txt] refers to him only as “the Warlock”. The name “Krill” must have come later.
+	I really have no idea if you’re meant to think of malevolent [brine shrimp|https://en.wikipedia.org/wiki/Krill].
 
 src:MAIN-55: “Krill” may be intended to be serious, but “Belboz” is at least a little bit silly.
 	The name comes from the same syllable bucket as “foo”, “bar”, “Frobozz”, “Borphee”, and the eight [reset buttons|relative:../suspended/#OBJ:CIRCLE1] in *Suspended*.
@@ -63,7 +64,7 @@ glob:HERE: The location of the [glob:WINNER].
 rtn:GO: Set up the world at the start of the game. Start the timers. Print the banner. Set all those useful globals like [~glob:HERE] and [~glob:WINNER].
 
 rtn:JIGS-UP: This routine handles the [~glob:WINNER]’s demise, whether that is the [~obj:PLAYER] or an NPC obeying a command.
-	If the [~glob:WINNER] is protected by `OZMOO` (see [glob:DEATH-CHEATED]), the death is avoided – unless the second argument is explicitly false (`<>`), which indicates a death to terrible for `OZMOO`.
+	If the [~glob:WINNER] is protected by `OZMOO` (see [glob:DEATH-CHEATED]), the death is avoided – unless the second argument is explicitly false (`<>`), which indicates a death too terrible for `OZMOO`.
 	Failing all that, Belboz will resurrect you three times (see [glob:DEATHS]). Or really four, but the last time you are demoted and the game ends.
 
 rtn:FINISH: This is called when the game is really, finally over. Display your score and offer the traditional `RESTORE`/`RESTART`/`QUIT` option.
@@ -113,7 +114,20 @@ glob:C-TABLE: The timer table. See the “Timers” tab for a current listing.
 
 rtn:I-TIME: The time-of-day timer. This advances [glob:TOD] every turn.
 	When [glob:TOD] reaches 128 (roughly 24 in-game hours), it’s reset to zero and a new day begins. Krill’s power increases: [glob:LOSSAGE] goes up by one, and [glob:DUSK] and [glob:NIGHTFALL] are brought forward by 20 (about two game hours). The [glob:MUNCHED] and [glob:MOLESTED] probabilities also increase.
-	###
+	Time also advances when you `SLEEP`. This is handled elsewhere; see [rtn:V-SLEEP]. But there is a [serious bug|src:SLEEP-194] in the sleep-time logic.
+
+rtn:V-SLEEP: This handles the effects of sleeping. (Both the `SLEEP` verb and [collapsing from exhaustion|rtn:I-TIRED].) The optional `TOLD?` argument just indicates whether the game has already told you “the bed is very comfortable”.
+	Sleeping advances time by [~const:MOVES-PER-SLEEP] turns, and many beneficial effects. [glob:REAL-SPELL-MAX] increases by one; the weariness penalties to [glob:LOAD-ALLOWED], [glob:FUMBLE-NUMBER], and [glob:FUMBLE-PROB] are reset. Also, [~glob:DREAMS] are important. On the down side, you forget all your spells, and there’s a chance that monsters will [rob|glob:MOLESTED] or [kill|glob:MUNCHED] you.
+	There is, however, a [serious bug|src:SLEEP-194] in the `SLEEP` logic.
+
+src:SLEEP-194: The time-of-day ([glob:TOD]) is increased by [const:MOVES-PER-SLEEP] turns. The `MOD` ensures that values beyond 128 wrap around to zero, as they should.
+	But there is a serious gap in this logic! If `TOD` wraps around here, the game does *not* apply the normal end-of-day logic from [rtn:I-TIME]. This means that Krill’s power does not increase. [glob:NIGHTFALL] does not shift, [glob:LOSSAGE] does not advance, and so on.
+	This means that if you are careful to only sleep at “midnight” or later, you can block Krill’s dominion and play for as many days as you like. Until you run out of bread, at least.
+	(Rooms are still ruined by [rtn:I-MUNG-ROOM], though. That’s handled as a special case in `V-SLEEP`.)
+
+glob:DREAMS: A list of prosaic dreams. Significant dreams are handled in [rtn:V-SLEEP].
+
+src:SLEEP-326: This may be an underhanded reference to *Infidel*, Infocom’s next-coming game.
 
 glob:TOD: The time of day. This runs on a scale of dawn (0) to the following dawn (128), at which time it’s reset to zero. (See [rtn:I-TIME].) The game does not deal in clock time, but [glob:TIME-TABLE] gives an idea of how the day runs. Five turns approximate an hour of game time.
 	[glob:DUSK] and [glob:NIGHTFALL] come earlier every day as Krill’s power increases, but the total length of the day does not change.
@@ -134,7 +148,7 @@ glob:MOLESTED: The chance of lurking creatures robbing you in your sleep. If thi
 glob:MUNCHED: The chance of lurking creatures devouring you in your sleep, once they run across you. (See [glob:MOLESTED]. If they don’t eat you, they will just steal your stuff.)
 	This increases every day.
 
-rtn:I-MUNG-ROOM: A timer which periodically applies ruination ([attr:RMUNGBIT]) to the rooms in [~glob:MUNG-ROOM-TABLE], one by one.
+rtn:I-MUNG-ROOM: A timer which periodically applies ruination ([attr:RMUNGBIT]) to the rooms in [~glob:MUNG-ROOM-TABLE], one by one. When you [SLEEP|rtn:V-SLEEP], three go in a row.
 
 rtn:I-SCURRY: Timer for occasional atmospheric messages.
 
@@ -148,7 +162,7 @@ const:MOVES-PER-SLEEP: How long you sleep for when you go to sleep. See [~rtn:V-
 
 rtn:I-GUARDS-ARRIVE: Timer for the [~obj:GANG-OF-FOUR] coming your way. This has a 30% chance of starting each turn you are in the [~obj:LIBRARY] or [~obj:BANQUET-HALL]. They will arrive on the next turn ([rtn:I-GANG]).
 
-rtn:I-GANG: Timer for the [~obj:GANG-OF-FOUR] trying to capture you. If you stand still, they will do so (unless you have cast `MELBOR`). Otherwise, they will follow you through any number of ruined rooms (see [rtn:I-MUNG-ROOM]) and up to [glob:LOSSAGE] undespoiled rooms as well.
+rtn:I-GANG: Timer for the [~obj:GANG-OF-FOUR] trying to capture you. If you stand still, they will do so (unless you have cast `MELBOR`). Otherwise, they will follow you through any number of ruined rooms (see [rtn:I-MUNG-ROOM]) and up to [glob:LOSSAGE] unspoiled rooms as well.
 
 
 attr:RMUNGBIT: Indicates ruined objects and rooms.
@@ -172,8 +186,22 @@ attr:POINTBIT: Set for the nine points on the [~obj:TMAP].
 
 attr:TREASURE: Set for obviously valuable objects. You don’t care, but the [obj:ADVENTURER] does.
 
+glob:FUMBLE-NUMBER: If you have more than this many objects, trying to take another has a [chance|src:VERBS-643] of failing.
+	This starts at seven but decreases as you tire. See [rtn:I-TIRED].
+
+glob:FUMBLE-PROB: The chance of failing to take another object, if you have more than [~glob:FUMBLE-NUMBER].
+	This starts at eight (per object) but increases as you tire. See [rtn:I-TIRED].
+
+src:VERBS-643: The “holding too many things” message is probabilistic. The more objects you have past [~glob:FUMBLE-NUMBER], the greater the chance ([~glob:FUMBLE-PROB]) of failing to pick up another.
+
 
 ### many comments about the ADVENTURER
+
+
+### terror logic
+
+
+### temple scene
 
 
 const:ZORK-NUMBER: The number of the Zorks shall be three! (Four, sir.) Four!
@@ -184,9 +212,8 @@ src:VERBS-1157: This last message is not compiled into the game file. It’s eff
 rtn:V-GROSS-OUT: The command `GROSS OUT` is not implemented in any other Infocom game. Why here? Perhaps because there is a [~obj:SILVER-SPOON], and some tester tried `GAG ME WITH A SPOON` (which is also supported).
 
 ### purple shift?
-### Necromancer
 
 ### [SCENIC-VIEW|relative:../zork3/#RTN:ZORK-IV-F]
 
-### design doc: https://github.com/historicalsource/enchanter/blob/master/enchanter.txt
+
 
