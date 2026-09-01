@@ -207,7 +207,18 @@ glob:SPELL-ROOM: The number of additional spells you can memorize, beyond the on
 	This value is maintained in parallel with [glob:SPELL-MAX] and your spell list. Handling it this way is redundant. It sets my teeth on edge but I’m not aware of any bugs in the logic.
 
 
-### many comments about the ADVENTURER
+obj:ADVENTURER: The Adventurer is of course a farago of in-jokes about the *Zork* games. (My favorite is [glob:SAILOR?])
+
+glob:SAILOR?: Set if the Adventurer has said “[Hello, sailor|~src:PURLOINED-753]” to you.
+	If you give him an object on the very next turn, he [smiles|~src:PURLOINED-686], because he thinks he’s figured out what `HELLO SAILOR` is for! This is a wonderful callback to [Zork 3|relative:../zork3/#RTN:SAILOR-F].
+
+src:PURLOINED-683: See [glob:SAILOR?]
+
+obj:PURLOINED-ROOM: “Purloined” in the sense of the Purloined Letter. The solution is right in front of you, but you can’t see it because of all the magical frippery.
+
+rtn:NO-ILLUSIONS: The point here is that the Adventurer is too mundane for the illusion magic to affect.
+
+src:PURLOINED-787: See the response to typing [MUMBLE|relative:../zork1/#RTN:V-MUMBLE] in *Zork 1*.
 
 
 ### terror logic
