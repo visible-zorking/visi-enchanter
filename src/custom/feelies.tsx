@@ -75,6 +75,13 @@ export function FeeliesPage()
                     {' '}be cast from its scroll &#x2014; which means you can
                     only cast it once. Choose your opportunity wisely.
                 </p>
+                <h3>A final warning</h3>
+                <p>
+                    Your training as an Enchanter has given you a heightened
+                    sensitivity to magic.
+                    Sometimes a spell which a mundane person would not even
+                    notice will have a profound effect on you!
+                </p>
                 <h3>Other useful commands</h3>
                 <p>
                     <code>TIME</code>: Show the approximate time of day.
