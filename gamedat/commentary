@@ -214,11 +214,16 @@ glob:SAILOR?: Set if the Adventurer has said “[Hello, sailor|~src:PURLOINED-75
 
 src:PURLOINED-686: See [glob:SAILOR?]
 
+rtn:SWORD-F: The sword is always glowing when you see it because *you* are in the room.
+
 obj:PURLOINED-ROOM: “Purloined” in the sense of the Purloined Letter. The solution is right in front of you, but you can’t see it because of all the magical frippery.
+	(The original [original design document|https://github.com/historicalsource/enchanter/blob/master/enchanter.txt]  makes this joke explicit.)
 
 rtn:NO-ILLUSIONS: The point here is that the Adventurer is too mundane for the illusion magic to affect.
 
-### purple shift?
+src:PURLOINED-111: What an enticing comment!
+	I really have no idea what the intent is. The [~obj:FLOATING-SIGN] and the [~obj:CREDITS-SCROLL] are purple, of course, as is the result of setting a [scroll on fire|~src:MAGIC-548]. Is magic inherently purple? Or only illusion magic? Or is light refracted to a higher wavelength by an ambient magical field?
+	(This is how nerd-fantasy authors think. Ask me about parallel slit windows in Tim Powers’s *The Stress of Her Regard*.)
 
 src:PURLOINED-787: See the response to typing `MUMBLE`, either [here|~RTN:V-MUMBLE] or in [Zork 1|relative:../zork1/#RTN:V-MUMBLE].
 
