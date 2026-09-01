@@ -218,13 +218,17 @@ obj:PURLOINED-ROOM: “Purloined” in the sense of the Purloined Letter. The so
 
 rtn:NO-ILLUSIONS: The point here is that the Adventurer is too mundane for the illusion magic to affect.
 
+### purple shift?
+
 src:PURLOINED-787: See the response to typing `MUMBLE`, either [here|~RTN:V-MUMBLE] or in [Zork 1|relative:../zork1/#RTN:V-MUMBLE].
 
 
 ### terror logic
 
 
-### temple scene
+rtn:I-TAKE-TO-ALTAR: This scene was prefigured at the [Scenic View|relative:../zork3/#RTN:ZORK-IV-F] in *Zork 3*. But in *Enchanter*, you can survive the experience.
+
+glob:LETTER-OF-TRANSIT: If you survive being sacrificed ([rtn:I-TAKE-TO-ALTAR]), the game gives you a few turns to leave the Temple. While `LETTER-OF-TRANSIT` is set, the evil creatures will not molest you.
 
 
 const:ZORK-NUMBER: The number of the Zorks shall be three! (Four, sir.) Four!
@@ -234,9 +238,7 @@ src:VERBS-1157: This last message is not compiled into the game file. It’s eff
 
 rtn:V-GROSS-OUT: The command `GROSS OUT` is not implemented in any other Infocom game. Why here? Perhaps because there is a [~obj:SILVER-SPOON], and some tester tried `GAG ME WITH A SPOON` (which is also supported).
 
-### purple shift?
 
-### [SCENIC-VIEW|relative:../zork3/#RTN:ZORK-IV-F]
 
 
 
