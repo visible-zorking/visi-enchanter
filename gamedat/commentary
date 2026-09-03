@@ -248,7 +248,19 @@ rtn:CONNECT: Connect two points on the [~obj:TMAP]. This calls itself with the a
 
 rtn:DISCONNECT: Disconnect two points on the [~obj:TMAP]. This calls itself with the arguments reversed so that the disconnection is two-way.
 
-rtn:CONNECTED?: Check if two maze rooms are adjacent.
+rtn:CONNECTED?: Check if two maze rooms are adjacent and connected by a single drawn line.
+
+rtn:TWALK1: If the [~obj:TERROR]’s location is connected to *any* room, this returns one of them. If not, it returns false.
+	I think this was intended to make the Terror wander in frustration if it had no exit path. It is still [called|~src:TERROR-696] from [rtn:I-TERROR], but the line that makes use of the result is [commented out|~src:TERROR-705].
+
+rtn:TWALK: Compute a path from a given room to the [exit|~obj:T-A]. (The given room is always the [~obj:TERROR]’s location, but the `TWALK` logic is general.) Returns true if such a path exists; the route is stored in [glob:PATH-TBL].
+	[rtn:PATH-OUT?] does the heavy lifting.
+
+rtn:PATH-OUT?: A recursive routine which finds a route from [glob:PSTART] to the [exit|~obj:T-A]. Returns true if such a path exists; the route is stored in [glob:PATH-TBL].
+
+glob:PSTART: The start point of the route search. This is set when [rtn:TWALK] is called.
+
+glob:PATH-TBL: This holds the current route from the [~obj:TERROR]’s location to the [exit|~obj:T-A]. It is filled in by [rtn:PATH-OUT?]
 
 
 rtn:I-TAKE-TO-ALTAR: This scene was prefigured at the [Scenic View|relative:../zork3/#RTN:ZORK-IV-F] in *Zork 3*. But in *Enchanter*, you can survive the experience.
