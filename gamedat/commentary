@@ -228,13 +228,27 @@ src:PURLOINED-111: What an enticing comment!
 src:PURLOINED-787: See the response to typing `MUMBLE`, either [here|~RTN:V-MUMBLE] or in [Zork 1|relative:../zork1/#RTN:V-MUMBLE].
 
 
-### terror logic
-
 prop:TMAZE: For each maze room, this property is a list of eight entries (one per compass direction). Each entry says which room is in that direction, and whether the exit is open (1) or closed (0).
 	The open/closed flags change as you wield the [~obj:PENCIL]. The room values do not.
 
+glob:TWALK-PATHS: Lists of which rooms connect to which other rooms. (Except for [~obj:T-A]. Once the Terror reaches there, the world ends, so it doesn’t have to move any more!)
+	This is a static table; it lists all potential connections, drawn or undrawn. The “drawn” flags are kept in the [prop:TMAZE] property for each room. (That property also lists the potential connections, so `TWALK-PATHS` is redundant, but it’s handy for the [rtn:TWALK] routine.)
+
 obj:POINT-B: The maze rooms are lettered [~obj:T-A] to [~obj:T-I]. Why do the [attr:POINTBIT] objects have apparently random letters? Because they have to avoid single-letter words already in use by the parser. `E` and `D` are directions; `I` and `G` are verb abbreviations; `A` is a common article.
 
+glob:TERROR-TRAPPED: Whether the [~obj:TERROR] is stuck in the maze (with no path to the exit). The [rtn:I-TERROR] timer routine uses this as a shortcut; if the flag is set, it doesn’t bother with path computation.
+	This is set if a path computation fails. It’s cleared when you [draw a pencil line|~src:TERROR-561]; that’s what sets the Terror in motion (or at least it tries).
+
+rtn:I-TERROR: Move the [~obj:TERROR], if possible. This runs every turn after you first use the [~obj:PENCIL].
+	If [glob:TERROR-TRAPPED] is false, this attempts to compute a path towards the exit. If there is none, [glob:TERROR-TRAPPED] is set true.
+	If [glob:TERROR-TRAPPED] is true, and you are adjacent to the Terror, it jumps you. Otherwise, it stays put.
+
+rtn:CONNECT: Connect two points on the [~obj:TMAP]. This calls itself with the arguments reversed so that the connection is two-way.
+	This also clears [glob:TERROR-TRAPPED] and starts the [rtn:I-TERROR] timer, if it isn’t already running.
+
+rtn:DISCONNECT: Disconnect two points on the [~obj:TMAP]. This calls itself with the arguments reversed so that the disconnection is two-way.
+
+rtn:CONNECTED?: Check if two maze rooms are adjacent.
 
 
 rtn:I-TAKE-TO-ALTAR: This scene was prefigured at the [Scenic View|relative:../zork3/#RTN:ZORK-IV-F] in *Zork 3*. But in *Enchanter*, you can survive the experience.
