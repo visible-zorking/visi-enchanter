@@ -102,6 +102,13 @@ glob:P-WON: Set if the parser successfully parsed a command. (As opposed to a bl
 	No relation to whether the *player* has won.
 
 
+rtn:BLT: Move the entire contents of one object to another object. This is used to strip your inventory when you are [captured|~rtn:TAKE-TO-TOWER].
+	I don’t know for sure, but I bet `BLT` stands for “block transfer”. This was a PDP-10 opcode which moved a bunch of bytes all at once. [Doctor Who fans|https://tardis.fandom.com/wiki/Block_Transfer_Computation] remember it fondly.
+
+rtn:ROB: Move the contents of one object to another object, or off-stage. This is selective: it skips scenery, scrolls, the [~obj:BREAD], the [~obj:JUG], and the [~obj:STRONG-BOX].
+	Returns true if anything was moved.
+
+
 TIMERS-LEGEND: A list of the timers running (or paused) in the timer table ([~glob:C-TABLE]). Positive numbers count down (while enabled) and call the named function after that many turns. Negative numbers are called every turn while the timer is enabled.
 	This list only grows as you play; timers can be added, started, and stopped, but not removed.
 
