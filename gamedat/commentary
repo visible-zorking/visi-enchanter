@@ -221,6 +221,9 @@ glob:SPELL-ROOM: The number of additional spells you can memorize, beyond the on
 	This value is maintained in parallel with [glob:SPELL-MAX] and your spell list. Handling it this way is redundant. It sets my teeth on edge but I’m not aware of any bugs in the logic.
 
 
+obj:DISPEL-SPELL: A subtle point: if the reward in the [Control Room|~obj:CLOSET] were a *copiable* scroll, you could cheese the puzzle by `GNUSTO`ing it and then [Belbozing|rtn:JIGS-UP] your way out.
+
+
 obj:ADVENTURER: The Adventurer is of course a farago of in-jokes about the *Zork* games. (My favorite is [glob:SAILOR?])
 
 glob:SAILOR?: Set if the Adventurer has said “[Hello, sailor|~src:PURLOINED-753]” to you.
