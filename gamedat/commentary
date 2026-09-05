@@ -213,6 +213,10 @@ glob:FUMBLE-PROB: The chance of failing to take another object, if you have more
 src:VERBS-643: The “holding too many things” message is probabilistic. The more objects you have past [~glob:FUMBLE-NUMBER], the greater the chance ([~glob:FUMBLE-PROB]) of failing to pick up another.
 
 
+src:MAGIC-5: Players have always referred to these spells by name: `FROTZ`, `GNUSTO`, etc. But note that the source code refers to them as [~obj:LIGHT-SPELL], [~obj:WRITE-MAGIC-SPELL], and so on. The designers must have thought of them that way first and attached the names later.
+	Indeed, the examples in the [original design document|https://github.com/historicalsource/enchanter/blob/master/enchanter.txt] were “Krebf!” for light and “Frotz!” for open.
+	The document also suggested that you might learn a spell by name but not know what it does. You’d have to figure out its effect by experiment. That idea was dropped in development.
+
 glob:REAL-SPELL-MAX: The maximum number of spells you can memorize at once (ignoring `GNUSTO`) when fully rested. This starts at four, but increases by one every time you [sleep|rtn:V-SLEEP]. (Compare [glob:SPELL-MAX].)
 
 glob:SPELL-MAX: The number of spells you can currently keep memorized (ignoring `GNUSTO`). When fully rested, this is the same as [glob:REAL-SPELL-MAX], but it decreases as you tire. (See [rtn:I-TIRED].)
@@ -234,7 +238,7 @@ src:PURLOINED-686: See [glob:SAILOR?]
 rtn:SWORD-F: The sword is always glowing when you see it because *you* are in the room.
 
 obj:PURLOINED-ROOM: “Purloined” in the sense of the Purloined Letter. The solution is right in front of you, but you can’t see it because of all the magical frippery.
-	(The original [original design document|https://github.com/historicalsource/enchanter/blob/master/enchanter.txt]  makes this joke explicit.)
+	(The [original design document|https://github.com/historicalsource/enchanter/blob/master/enchanter.txt]  makes this joke explicit.)
 
 rtn:NO-ILLUSIONS: The point here is that the Adventurer is too mundane for the illusion magic to affect.
 

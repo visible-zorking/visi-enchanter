@@ -616,6 +616,7 @@ RoutineType - PICK-ONE TABLE
 RoutineType - RANDOM-ELEMENT TABLE
 RoutineType - RIPOFF OBJ OBJ
 RoutineType - ROB OBJ OBJ
+RoutineType - SPELL-CHECK - WORD
 RoutineType - SPELL-PRINT OBJ
 RoutineType - SPELL-TIMES OBJ
 RoutineType - SYNTAX-FOUND GLINE
