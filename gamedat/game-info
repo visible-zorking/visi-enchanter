@@ -594,9 +594,12 @@ Global 230 VERBS  table created from SYNTAX
 
 # Argument type info for routines that are hard to guess.
 
+RoutineType - ACLAUSE-WIN WORD
 RoutineType - ADVENTURER-DECIDE OBJ
 RoutineType - BLT OBJ OBJ
 RoutineType - CLAUSE - - WORD
+RoutineType - CLAUSE-ADD WORD
+RoutineType - CLAUSE-COPY TABLE TABLE WORD
 RoutineType - CONNECT OBJ OBJ -
 RoutineType - CONNECTED? OBJ OBJ
 RoutineType - CN OBJ TDIR
@@ -610,15 +613,17 @@ RoutineType - EGG-KNOB-STATE OBJ
 RoutineType - FORGET-SPELL OBJ
 RoutineType - GLOBAL-IN? OBJ OBJ
 RoutineType - GWIM - - PREP
+RoutineType - INBUF-STUFF TABLE TABLE
 RoutineType - ORPHAN GLINE GLINE
 RoutineType - PERFORM ACTION PERFORMO PERFORMI
 RoutineType - PICK-ONE TABLE
 RoutineType - RANDOM-ELEMENT TABLE
 RoutineType - RIPOFF OBJ OBJ
 RoutineType - ROB OBJ OBJ
-RoutineType - SPELL-CHECK - WORD
+RoutineType - SPELL-CHECK TABLE WORD
 RoutineType - SPELL-PRINT OBJ
 RoutineType - SPELL-TIMES OBJ
+RoutineType - STUFF TABLE TABLE
 RoutineType - SYNTAX-FOUND GLINE
 RoutineType - V-CLIMB-UP PROP
 RoutineType - WT? WORD - -
