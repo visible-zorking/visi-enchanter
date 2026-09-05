@@ -60,12 +60,19 @@ glob:WINNER: `WINNER` is the actor in the current command.
 
 glob:HERE: The location of the [glob:WINNER].
 
+glob:SCORE: Your score is increased by story milestones (casting `FROTZ`, opening the front gate, etc). Each of these is associated with a global variable ([~glob:LIGHT-POINT], [~glob:ENTRY-POINT]) which is cleared after use to track the achievement.
+	Interestingly, there is no `SCORE` penalty for dying. Completing the game with a couple of resurrections gives you full credit.
+	(However, [releasing the Terror|~rtn:END-OF-WORLD] ends the game with a score of -10, “[Menace to Society|~src:VERBS-235]”.)
+
+src:VERBS-235: You get a negative score if you release the [~obj:TERROR]. See [~rtn:END-OF-WORLD].
+
 
 rtn:GO: Set up the world at the start of the game. Start the timers. Print the banner. Set all those useful globals like [~glob:HERE] and [~glob:WINNER].
 
 rtn:JIGS-UP: This routine handles the [~glob:WINNER]’s demise, whether that is the [~obj:PLAYER] or an NPC obeying a command.
 	If the [~glob:WINNER] is protected by `OZMOO` (see [glob:DEATH-CHEATED]), the death is avoided – unless the second argument is explicitly false (`<>`), which indicates a death too terrible for `OZMOO`.
 	Failing all that, Belboz will resurrect you three times (see [glob:DEATHS]). Or really four, but the last time you are demoted and the game ends.
+	Unlike in *Zork*, there is no [glob:SCORE] penalty for dying.
 
 rtn:FINISH: This is called when the game is really, finally over. Display your score and offer the traditional `RESTORE`/`RESTART`/`QUIT` option.
 
