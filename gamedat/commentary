@@ -224,6 +224,10 @@ glob:SPELL-MAX: The number of spells you can currently keep memorized (ignoring 
 glob:SPELL-ROOM: The number of additional spells you can memorize, beyond the ones you already know.
 	This value is maintained in parallel with [glob:SPELL-MAX] and your spell list. Handling it this way is redundant. It sets my teeth on edge but I’m not aware of any bugs in the logic.
 
+rtn:FORGET-SPELL: Randomly forget one spell, but *not* the spell passed as an argument. (If you learn a spell when [glob:SPELL-ROOM] is zero, you randomly forget a *different* spell. Unless they’re all the same.)
+	Uses [glob:FORGET-TBL] as temporary storage.
+
+glob:FORGET-TBL: Temporary storage used by [rtn:FORGET-SPELL]. To forget a random spell, the game must build a list of your memorized spells including duplicates.
 
 obj:DISPEL-SPELL: A subtle point: if the reward in the [Control Room|~obj:CLOSET] were a *copiable* scroll, you could cheese the puzzle by `GNUSTO`ing it and then [Belbozing|rtn:JIGS-UP] your way out.
 
