@@ -264,10 +264,11 @@ rtn:TWALK: Compute a path from a given room to the [exit|~obj:T-A]. (The given r
 	[rtn:PATH-OUT?] does the heavy lifting.
 
 rtn:PATH-OUT?: A recursive routine which finds a route from [glob:PSTART] to the [exit|~obj:T-A]. Returns true if such a path exists; the route is stored in [glob:PATH-TBL].
+	Used by [rtn:TWALK].
 
 glob:PSTART: The start point of the route search. This is set when [rtn:TWALK] is called.
 
-glob:PATH-TBL: This holds the current route from the [~obj:TERROR]’s location to the [exit|~obj:T-A]. It is filled in by [rtn:PATH-OUT?]
+glob:PATH-TBL: This holds the current route from the [~obj:TERROR]’s location to the [exit|~obj:T-A]. It is filled in by [rtn:TWALK], or really by [rtn:PATH-OUT?]
 
 
 rtn:I-TAKE-TO-ALTAR: This scene was prefigured at the [Scenic View|relative:../zork3/#RTN:ZORK-IV-F] in *Zork 3*. But in *Enchanter*, you can survive the experience.
