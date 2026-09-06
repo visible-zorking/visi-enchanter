@@ -383,7 +383,7 @@ Global 19 AWAKE
 Global 20 MOLESTED
 Global 21 BEATEN-UP
 Global 22 NIGHT-GLIMPSES  DATA
-Global 23 P-SLOCBITS
+Global 23 P-SLOCBITS  SLOCBITS
 Global 24 P-MATCHLEN
 Global 25 P-ADVERB
 Global 26 TERROR-POINT
@@ -604,6 +604,7 @@ RoutineType - CONNECT OBJ OBJ -
 RoutineType - CONNECTED? OBJ OBJ
 RoutineType - CN OBJ TDIR
 RoutineType - DESCRIBE-NEW-EXIT OBJ OBJ
+RoutineType - DO-SL OBJ SLOCBITS SLOCBITS
 RoutineType - DIR-FROM OBJ OBJ
 RoutineType - DIR-PRINT PROP
 RoutineType - DISCONNECT OBJ OBJ -
@@ -614,6 +615,7 @@ RoutineType - FORGET-SPELL OBJ
 RoutineType - GLOBAL-IN? OBJ OBJ
 RoutineType - GWIM - - PREP
 RoutineType - INBUF-STUFF TABLE TABLE
+RoutineType - ITAKE-CHECK TABLE SLOCBITS
 RoutineType - ORPHAN GLINE GLINE
 RoutineType - PERFORM ACTION PERFORMO PERFORMI
 RoutineType - PICK-ONE TABLE
@@ -626,7 +628,7 @@ RoutineType - SPELL-TIMES OBJ
 RoutineType - STUFF TABLE TABLE
 RoutineType - SYNTAX-FOUND GLINE
 RoutineType - V-CLIMB-UP PROP
-RoutineType - WT? WORD - -
+RoutineType - WT? WORD PSTYPE P1TYPE
 
 # Map connections that don't come directly from room properties.
 # (These are used for the "list rooms in order of closeness to you"
