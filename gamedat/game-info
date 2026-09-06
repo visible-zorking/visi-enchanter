@@ -611,6 +611,7 @@ RoutineType - DISCONNECT OBJ OBJ -
 RoutineType - DOOR-FROM? OBJ OBJ
 RoutineType - ECN OBJ OBJ
 RoutineType - EGG-KNOB-STATE OBJ
+RoutineType - FIND-IN OBJ ATTR
 RoutineType - FORGET-SPELL OBJ
 RoutineType - GLOBAL-IN? OBJ OBJ
 RoutineType - GWIM ATTRZ SLOCBITS PREP
