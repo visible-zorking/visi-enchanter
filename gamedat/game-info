@@ -595,24 +595,12 @@ Global 230 VERBS  table created from SYNTAX
 # Argument type info for routines that are hard to guess.
 
 RoutineType - ACLAUSE-WIN WORD
-RoutineType - ADVENTURER-DECIDE OBJ
 RoutineType - BLT OBJ OBJ
 RoutineType - CLAUSE - - WORD
 RoutineType - CLAUSE-ADD WORD
 RoutineType - CLAUSE-COPY TABLE TABLE WORD
-RoutineType - CONNECT OBJ OBJ -
-RoutineType - CONNECTED? OBJ OBJ
-RoutineType - CN OBJ TDIR
-RoutineType - DESCRIBE-NEW-EXIT OBJ OBJ
 RoutineType - DO-SL OBJ SLOCBITS SLOCBITS
-RoutineType - DIR-FROM OBJ OBJ
-RoutineType - DIR-PRINT PROP
-RoutineType - DISCONNECT OBJ OBJ -
-RoutineType - DOOR-FROM? OBJ OBJ
-RoutineType - ECN OBJ OBJ
-RoutineType - EGG-KNOB-STATE OBJ
 RoutineType - FIND-IN OBJ ATTR
-RoutineType - FORGET-SPELL OBJ
 RoutineType - GLOBAL-IN? OBJ OBJ
 RoutineType - GWIM ATTRZ SLOCBITS PREP
 RoutineType - INBUF-STUFF TABLE TABLE
@@ -621,15 +609,28 @@ RoutineType - ORPHAN GLINE GLINE
 RoutineType - PERFORM ACTION PERFORMO PERFORMI
 RoutineType - PICK-ONE TABLE
 RoutineType - RANDOM-ELEMENT TABLE
+RoutineType - STUFF TABLE TABLE
+RoutineType - SYNTAX-FOUND GLINE
+RoutineType - V-CLIMB-UP PROP
+RoutineType - WT? WORD PSTYPE P1TYPE
+
+RoutineType - ADVENTURER-DECIDE OBJ
+RoutineType - CONNECT OBJ OBJ -
+RoutineType - CONNECTED? OBJ OBJ
+RoutineType - CN OBJ TDIR
+RoutineType - DIR-FROM OBJ OBJ
+RoutineType - DIR-PRINT PROP
+RoutineType - DOOR-FROM? OBJ OBJ
+RoutineType - DESCRIBE-NEW-EXIT OBJ OBJ
+RoutineType - DISCONNECT OBJ OBJ -
+RoutineType - ECN OBJ OBJ
+RoutineType - EGG-KNOB-STATE OBJ
+RoutineType - FORGET-SPELL OBJ
 RoutineType - RIPOFF OBJ OBJ
 RoutineType - ROB OBJ OBJ
 RoutineType - SPELL-CHECK TABLE WORD
 RoutineType - SPELL-PRINT OBJ
 RoutineType - SPELL-TIMES OBJ
-RoutineType - STUFF TABLE TABLE
-RoutineType - SYNTAX-FOUND GLINE
-RoutineType - V-CLIMB-UP PROP
-RoutineType - WT? WORD PSTYPE P1TYPE
 
 # Map connections that don't come directly from room properties.
 # (These are used for the "list rooms in order of closeness to you"
