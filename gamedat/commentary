@@ -74,6 +74,9 @@ rtn:JIGS-UP: This routine handles the [~glob:WINNER]’s demise, whether that is
 	Failing all that, Belboz will resurrect you three times (see [glob:DEATHS]). Or really four, but the last time you are demoted and the game ends.
 	Unlike in *Zork*, there is no [glob:SCORE] penalty for dying.
 
+rtn:RANDOMIZE-OBJECTS: If you die and are resurrected, you keep your possessions, except that scrolls are left in the room where you died.
+	(The process is not in fact random. The name is left over from *Zork*, where your possessions were scattered.)
+
 rtn:FINISH: This is called when the game is really, finally over. Display your score and offer the traditional `RESTORE`/`RESTART`/`QUIT` option.
 
 glob:DEATH-CHEATED: The person currently protected by `OZMOO`.
@@ -131,7 +134,7 @@ rtn:I-TIME: The time-of-day timer. This advances [glob:TOD] every turn.
 	Time also advances when you `SLEEP`. This is handled elsewhere; see [rtn:V-SLEEP]. But there is a [serious bug|src:SLEEP-194] in the sleep-time logic.
 
 rtn:V-SLEEP: This handles the effects of sleeping. (Both the `SLEEP` verb and [collapsing from exhaustion|rtn:I-TIRED].) The optional `TOLD?` argument just indicates whether the game has already told you “the bed is very comfortable”.
-	Sleeping advances time by [~const:MOVES-PER-SLEEP] turns, and many beneficial effects. [glob:REAL-SPELL-MAX] increases by one; the weariness penalties to [glob:LOAD-ALLOWED], [glob:FUMBLE-NUMBER], and [glob:FUMBLE-PROB] are reset. Also, [~glob:DREAMS] are important. On the down side, you forget all your spells, and there’s a chance that monsters will [rob|glob:MOLESTED] or [kill|glob:MUNCHED] you.
+	Sleeping advances time by [~const:MOVES-PER-SLEEP] turns, and has many beneficial effects. [glob:REAL-SPELL-MAX] increases by one; the weariness penalties to [glob:LOAD-ALLOWED], [glob:FUMBLE-NUMBER], and [glob:FUMBLE-PROB] are reset. Also, [~glob:DREAMS] are important. On the down side, you forget all your spells, and there’s a chance that monsters will [rob|glob:MOLESTED] or [kill|glob:MUNCHED] you.
 	There is, however, a [serious bug|src:SLEEP-194] in the `SLEEP` logic.
 
 src:SLEEP-194: The time-of-day ([glob:TOD]) is increased by [const:MOVES-PER-SLEEP] turns. The `MOD` ensures that values beyond 128 wrap around to zero, as they should.
