@@ -65,7 +65,7 @@ export function FeeliesPage()
                     as many times as you want.
                 </p>
                 <p>
-                    Note that you know <code>GNUSTO</code> spell by heart.
+                    Note that you know the <code>GNUSTO</code> spell by heart.
                     You will never forget it, so you never have to{' '}
                     <code>LEARN GNUSTO</code>.
                 </p>
