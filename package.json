@@ -10,6 +10,7 @@
     "buildts": "pnpm exec tsc && pnpm exec rollup -c",
     "minify": "./minify gamedat.js && ./minify lib.js && ./minify glkio.js && ./minify ifvms.js && ./minify gnusto.js && ./minify parchment.js",
     "builddata": "npm run recreate-gamedata && npm run rearrange-tables && npm run recolor-source && pnpm run regenerate-commentary && pnpm run reparse-map",
+    "buildstatic": "python3 visiterp/pyana/wimshurst.py --dist ../dist --title 'Enchanter'",
     "recreate-gamedata": "python3 visiterp/pyana/parse.py --game enchanter-r29-s860820 -z gamesrc/z4.zil --obj --dict --grammar --txd --gamedat",
     "rearrange-tables": "python3 visiterp/pyana/parse.py --game enchanter-r29-s860820 -z gamesrc/z4.zil --zcode gamedat/enchanter-r29-s860820.z3 --gamedat",
     "recolor-source": "python3 visiterp/pyana/parse.py --game enchanter-r29-s860820 -z gamesrc/z4.zil --src --reindent",
