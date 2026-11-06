@@ -237,6 +237,8 @@ obj:DISPEL-SPELL: A subtle point: if the reward in the [Control Room|~obj:CLOSET
 
 obj:ADVENTURER: The Adventurer is of course a farago of in-jokes about the *Zork* games. (My favorite is [glob:SAILOR?])
 
+prop:ADVFCN: If a room has this property, it’s called when the [obj:ADVENTURER] enters. For an object, it’s called when the [obj:ADVENTURER] sees it and tries to pick it up.
+
 glob:SAILOR?: Set if the Adventurer has said “[Hello, sailor|~src:PURLOINED-753]” to you.
 	If you give him an object on the very next turn, he [smiles|~src:PURLOINED-686], because he thinks he’s figured out what `HELLO SAILOR` is for! This is a wonderful callback to [Zork 3|relative:../zork3/#RTN:SAILOR-F].
 
@@ -304,6 +306,9 @@ src:VERBS-1157: This last message is not compiled into the game file. It’s eff
 
 rtn:V-GROSS-OUT: The command `GROSS OUT` is not implemented in any other Infocom game. Why here? Perhaps because there is a [~obj:SILVER-SPOON], and some tester tried `GAG ME WITH A SPOON` (which is also supported).
 
+rtn:JEWELLED-BOX-A: This is the [prop:ADVFCN] routine for the [~obj:JEWELLED-BOX]. It narrates various actions for the [~obj:ADVENTURER] to try when he sees the box.
+	*Bug:* Unfortunately, the routine checks `<IN? ,HERE ,JEWELLED-BOX>` to see whether the box is present. But the arguments are the wrong way around. The test always fails, so the actions are never displayed.
+	(c:Torbjörn Andersson)
 
 
 
